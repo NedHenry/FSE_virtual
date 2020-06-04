@@ -1,0 +1,45 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.7
+    command: --init-file /data/application/init.sql
+    volumes:
+      - ./init.sql:/data/application/init.sql
+      - ./tmp/db-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: twinktwerk
+      MYSQL_DATABASE: fse_virtual
+      MYSQL_USER: fse_user
+      MYSQL_PASSWORD: twinktwerk
+  webpacker:
+    image: ethenry/fse_virtual_dev
+    command: ["./scripts/start_webpack_dev.sh"]
+    volumes:
+      - .:/fse_virtual
+    environment:
+      MYSQL_PASS: twinktwerk
+      MYSQL_DATABASE: fse_virtual
+      MYSQL_USER: fse_user
+      MYSQL_HOST: db
+      RAILS_ENV: development
+    ports:
+      - 3035:3035
+  web:
+    build: .
+    image: ethenry/fse_virtual_dev
+    command: ["./scripts/wait-for-it.sh", "db:5432", "--", "./scripts/start_rails.sh"]
+    volumes:
+      - .:/fse_virtual
+    environment:
+      MYSQL_PASS: twinktwerk
+      MYSQL_DATABASE: fse_virtual
+      MYSQL_USER: fse_user
+      MYSQL_HOST: db
+      RAILS_ENV: development
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+      - webpacker
+
+
