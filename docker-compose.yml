@@ -13,6 +13,10 @@ services:
       MYSQL_DATABASE: fse_virtual
       MYSQL_USER: fse_user
       MYSQL_PASSWORD: twinktwerk
+    networks:
+      rails-network:
+        aliases:
+          - mysql
   webpacker:
     image: ethenry/fse_virtual_dev
     command: ["./scripts/start_webpack_dev.sh"]
@@ -26,6 +30,10 @@ services:
       RAILS_ENV: development
     ports:
       - 3035:3035
+    networks:
+      rails-network:
+        aliases:
+          - packer
   redis:
     image: 'bitnami/redis:latest'
     container_name: redis
@@ -35,7 +43,12 @@ services:
       - '6379:6379'
     volumes:
       - redis-data:/bitnami/redis/data
+    networks:
+      rails-network:
+        aliases:
+          - queue
   web:
+    container_name: fse_webapp
     build: .
     image: ethenry/fse_virtual_dev
     command: ["./scripts/wait-for-it.sh", "db:3306", "--", "./scripts/start_rails.sh"]
@@ -52,7 +65,23 @@ services:
     depends_on:
       - db
       - webpacker
+    networks:
+      rails-network:
+        aliases:
+          - web.com
+  chrome:
+    image: selenium/standalone-chrome-debug:3.9.1-actinium
+    ports:
+      - "4444:4444"
+      - "5900:5900"
+    depends_on:
+      - web
+    networks:
+      rails-network:
+        aliases:
+          - chrome.com
 volumes:
   redis-data:
-
+networks:
+  rails-network:
 
