@@ -8,7 +8,7 @@ ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 set :branch, ENV['BRANCH'] if ENV['BRANCH']
 
 # Default deploy_to directory is /var/www/my_app_name
- set :deploy_to, "/srv/fse_virtual"
+set :deploy_to, "/srv/fse_virtual_deploy"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
