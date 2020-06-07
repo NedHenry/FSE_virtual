@@ -15,21 +15,19 @@ jobs:
     stage: test
     script: bundle exec rspec spec
     env:
-    - DOCKER_COMPOSE_VERSION: 1.8.0
+      - DOCKER_COMPOSE_VERSION: 1.8.0
     services:
-    - docker
+      - docker
     before_install:
-    - sudo apt-get update
-    - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-engine
-    - sudo rm /usr/local/bin/docker-compose
-    - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname
-      -s`-`uname -m` > docker-compose
-    - chmod +x docker-compose
-    - sudo mv docker-compose /usr/local/bin
+      - sudo apt-get update
+      - sudo rm /usr/local/bin/docker-compose
+      - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+      - chmod +x docker-compose
+      - sudo mv docker-compose /usr/local/bin
     install:
-    - docker-compose build
-    - docker-compose up -d
-    - docker ps
+      - docker-compose build
+      - docker-compose up -d
+      - docker ps
     before_script:
     - docker exec /srv/hycruz/wait-for-services.sh localhost:80 -t 180
     - docker exec /srv/hycruz/wait-for-services.sh db:3306 -t 180
