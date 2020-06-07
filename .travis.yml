@@ -16,6 +16,7 @@ jobs:
     script: bundle exec rspec spec
     env:
       - DOCKER_COMPOSE_VERSION: 1.26.0
+      - secure: ipyRUUUrui3JR1F/freGbdT8NIzGMkU3UaIoL1HwXm3Pq0WpX3pi5q6jScDJD4eMmg8pnw2jFd1JQtl379aCYOM2f2r/1VSLugGgE1envF9YXTXelmlp0Vry8Ku+EtpMEujfx01m51ZU75mh4st1k2+Xw9af9gFgX6weBgCzNBN9+R94/YO7Y4DWx7zkRtmfL50Ur9QML4h1FzIC8m+VXz0WTB1CkTd2+mMv2duNaHR5xUiwUFcBJ0TwxlD2NmbSA9egx7q0cdvMTPBmwTPFNVFePpffdv5rft5mr2un5kC1EQCHWmpF0QvDrYpjTcUu6/Yupwoimbaeo5RO4Vm5eub00VwhKgFXhsqukEqv/9V6jGri3xUBLuSXDUP/B7mOa7wUcfB+HhEuI5uoUotRJBcPaTbIm4Y3iTegxZZwQJyFSMTNyeb2n7tOOl2K5l8/vkfdOf8TV8XNQxP68RcVDiJJcq3A5Kb1KLFxX3ZwE9wpxnkLYTtZ+YbM+h8tCorpCJi1AAAYoQvKAZQiSCL9NWL5Q7exhB77nU1Gt1Bq4u86+uxXgoh19f4HenRtlR7mSM+HyHby5cEA8EPq5uWRxDFIZOEuMgrJzpM7OM92j6FpKOJL6sk+k3pZ0TLdh8yN5FJ47xI31tciAl6B3QNw5DE3nSwbd4v/M36PgLUo7k4=
     services:
       - docker
     before_install:
@@ -29,8 +30,8 @@ jobs:
       - docker-compose up -d
       - docker ps
     before_script:
-    - docker exec /srv/hycruz/wait-for-services.sh localhost:80 -t 180
-    - docker exec /srv/hycruz/wait-for-services.sh db:3306 -t 180
+    - docker exec fse_webapp scripts/wait-for-it.sh localhost:80 -t 180
+    - docker exec fse_webapp scripts/wait-for-it.sh db:3306 -t 180
   - name: Deployment
     stage: depoy
     before_install:
