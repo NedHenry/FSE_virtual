@@ -55,11 +55,12 @@ services:
     volumes:
       - .:/fse_virtual
     environment:
-      MYSQL_PASS: twinktwerk
-      MYSQL_DATABASE: fse_virtual
-      MYSQL_USER: fse_user
-      MYSQL_HOST: db
-      RAILS_ENV: development
+      - MYSQL_PASS=twinktwerk
+      - MYSQL_DATABASE=fse_virtual
+      - MYSQL_USER=fse_user
+      - MYSQL_HOST=db
+      - RAILS_ENV
+      - RAILS_MASTER_KEY
     ports:
       - "3000:3000"
     depends_on:
