@@ -30,8 +30,8 @@ jobs:
       - docker-compose up -d
       - docker ps
     before_script:
-    - docker exec fse_webapp scripts/wait-for-it.sh localhost:3000 -t 180
-    - docker exec fse_webapp scripts/wait-for-it.sh db:3306 -t 180
+    - docker exec fse_webapp scripts/wait-for-it.sh localhost:3000 -t 300
+    - docker exec fse_webapp scripts/wait-for-it.sh db:3306 -t 300
   - name: Deployment
     stage: depoy
     before_install:
