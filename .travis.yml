@@ -11,34 +11,36 @@ stages:
   - deploy
 jobs:
   include:
-    - name: "Tests"
-      stage: test
-      script: bundle exec rspec spec
-      env:
-        - DOCKER_COMPOSE_VERSION: 1.8.0
-      services:
-        - docker
-      before_install:
-        - sudo apt-get update
-        - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-engine
-        - sudo rm /usr/local/bin/docker-compose
-        - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
-        - chmod +x docker-compose
-        - sudo mv docker-compose /usr/local/bin
-      install:
-        - docker-compose build
-        - docker-compose up -d
-        - docker ps
-      before_script:
-        - docker exec /srv/hycruz/wait-for-services.sh localhost:80 -t 180
-        - docker exec /srv/hycruz/wait-for-services.sh db:3306 -t 180      
-    - name: "Deployment"
-      stage: depoy
-      install:
-        - gem install capistrano
-        - gem install capistrano-bundler
-        - gem install capistrano-passenger
-        - gem install capistrano-rails
-        - gem install capistrano-rbenv
-      script: bundle exec cap ${TRAVIS_BRANCH/master/production} deploy BRANCH=$TRAVIS_BRANCH
-
+  - name: Tests
+    stage: test
+    script: bundle exec rspec spec
+    env:
+    - DOCKER_COMPOSE_VERSION: 1.8.0
+    services:
+    - docker
+    before_install:
+    - sudo apt-get update
+    - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-engine
+    - sudo rm /usr/local/bin/docker-compose
+    - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname
+      -s`-`uname -m` > docker-compose
+    - chmod +x docker-compose
+    - sudo mv docker-compose /usr/local/bin
+    install:
+    - docker-compose build
+    - docker-compose up -d
+    - docker ps
+    before_script:
+    - docker exec /srv/hycruz/wait-for-services.sh localhost:80 -t 180
+    - docker exec /srv/hycruz/wait-for-services.sh db:3306 -t 180
+  - name: Deployment
+    stage: depoy
+    before_install:
+      - openssl aes-256-cbc -K $encrypted_d8f27d088093_key -iv $encrypted_d8f27d088093_iv -in id_fse_rsa.enc -out id_fse_rsa -d
+    install:
+      - gem install capistrano
+      - gem install capistrano-bundler
+      - gem install capistrano-passenger
+      - gem install capistrano-rails
+      - gem install capistrano-rbenv
+    script: bundle exec cap ${TRAVIS_BRANCH/master/production} deploy BRANCH=$TRAVIS_BRANCH
