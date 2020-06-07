@@ -49,7 +49,6 @@ services:
           - queue
   web:
     container_name: fse_webapp
-    build: .
     image: ethenry/fse_virtual_dev
     command: ["./scripts/wait-for-it.sh", "db:3306", "--", "./scripts/start_rails.sh"]
     volumes:
