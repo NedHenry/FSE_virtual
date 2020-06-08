@@ -27,6 +27,8 @@ jobs:
       - sudo mv docker-compose /usr/local/bin
     install:
       - docker-compose pull
+      - sudo mkdir -p tmp
+      - sudo chmod 777 tmp
       - docker-compose up
       - docker ps
     before_script:
