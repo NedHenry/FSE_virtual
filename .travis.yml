@@ -13,7 +13,7 @@ jobs:
   include:
   - name: Tests
     stage: test
-    script: bundle exec rspec spec
+    script: docker exec fse_webapp bundle exec rspec spec
     env:
       - DOCKER_COMPOSE_VERSION: 1.26.0
       - RAILS_ENV: test
