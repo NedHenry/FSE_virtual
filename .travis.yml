@@ -2,6 +2,8 @@ language: ruby
 cache:
   bundler: true
   apt: true
+  directories:
+    - /var/lib/docker
 git:
   strategy: clone
   depth: 1
