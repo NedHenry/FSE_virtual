@@ -27,7 +27,7 @@ jobs:
       - sudo mv docker-compose /usr/local/bin
     install:
       - docker-compose pull
-      - docker-compose up -d
+      - docker-compose up
       - docker ps
     before_script:
     - docker exec fse_webapp scripts/wait-for-it.sh localhost:3000 -t 300
