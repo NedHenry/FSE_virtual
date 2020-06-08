@@ -28,7 +28,7 @@ jobs:
     install:
       - docker-compose pull
       - sudo mkdir -p tmp
-      - sudo chmod 777 tmp
+      - sudo chmod 777 .
       - docker-compose up
       - docker ps
     before_script:
