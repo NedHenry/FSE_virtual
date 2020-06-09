@@ -10,7 +10,7 @@ set :branch, ENV['BRANCH'] if ENV['BRANCH']
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/srv/fse_virtual_deploy"
 
-set :ssh_options, keys: ["deploy_id_rsa"] if File.exist?("deploy_id_rsa")
+set :ssh_options, keys: ["id_fse_rsa"] if File.exist?("id_fse_rsa")
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
