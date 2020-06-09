@@ -46,5 +46,7 @@ jobs:
       - gem install capistrano-passenger
       - gem install capistrano-rails
       - gem install capistrano-rbenv
-      - gem install i18n
+      - gem install net-ssh
+      - gem install ed25519
+      - gem install bcrypt_pbkdf
     script: cap ${TRAVIS_BRANCH/master/production} deploy BRANCH=$TRAVIS_BRANCH
