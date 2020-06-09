@@ -3,7 +3,6 @@ services:
   db:
     image: mysql:5.7
     container_name: db
-    command: --init-file /data/application/init.sql
     ports:
       - 3306:3306
     volumes:
