@@ -47,4 +47,4 @@ jobs:
       - gem install capistrano-rails
       - gem install capistrano-rbenv
       - gem install i18n
-    script: bundle exec cap ${TRAVIS_BRANCH/master/production} deploy BRANCH=$TRAVIS_BRANCH
+    script: cap ${TRAVIS_BRANCH/master/production} deploy BRANCH=$TRAVIS_BRANCH
