@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FseVirtual</title>
+    <title>Folsom St Events</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <%= render '/user_header' if current_user.present? %>
+    <%= render '/masthead' %>
+    <%= render '/navigation' %>
+    <%= render '/endorsements' %>
+    <%= render '/schedule' %>
+    <%= render '/flash_msg' %>
     <%= yield %>
+
+    <%= render '/footer' %>
   </body>
 </html>
