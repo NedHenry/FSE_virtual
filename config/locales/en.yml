@@ -31,3 +31,9 @@
 
 en:
   hello: "Hello world"
+  sign_in: "Sign in"
+  register: "Register"
+  helpers:
+    label:
+      user:
+        age_verification: "I am at least 18 years of age, and I am legally allowed to view sexual content."
