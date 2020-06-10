@@ -19,6 +19,7 @@ services:
           - mysql
           - db
   webpacker:
+    container_name: webpacker
     image: ethenry/fse_virtual_dev
     command: ["./scripts/start_webpack_dev.sh"]
     volumes:
