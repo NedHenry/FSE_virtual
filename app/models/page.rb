@@ -1,6 +1,7 @@
 class Page < ApplicationRecord
 
   def save
+    slug = title.parameterize if slug.nil?
     unless File.file?(view_partial_path)
       File.open(view_partial_path, "w") {}
     end
@@ -8,7 +9,7 @@ class Page < ApplicationRecord
   end
 
   def view_partial_name
-    "page_#{title.parameterize}"
+    "page_#{slug}"
   end
 
   def view_partial_filename
