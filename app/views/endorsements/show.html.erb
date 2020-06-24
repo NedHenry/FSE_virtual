@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Affiliate:</strong>
+  <%= @endorsement.affiliate_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @endorsement.name %>
+</p>
+
+<p>
+  <strong>Caption:</strong>
+  <%= @endorsement.caption %>
+</p>
+
+<p>
+  <strong>Enabled:</strong>
+  <%= @endorsement.enabled %>
+</p>
+
+<p>
+  <strong>Media uri:</strong>
+  <%= @endorsement.media_uri %>
+</p>
+
+<p>
+  <strong>Media type:</strong>
+  <%= @endorsement.media_type %>
+</p>
+
+<%= link_to 'Edit', edit_endorsement_path(@endorsement) %> |
+<%= link_to 'Back', endorsements_path %>

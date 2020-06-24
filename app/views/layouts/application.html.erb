@@ -9,15 +9,32 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= render '/user_header' if current_user.present? %>
-    <%= render '/masthead' %>
-    <%= render '/navigation' %>
-    <%= render '/endorsements' %>
-    <%= render '/schedule' %>
-    <%= render '/flash_msg' %>
-    <%= yield %>
+  <body class="bg-dark text-light">
+    <div id="header-bar" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-8">
+          <%= render '/masthead' %>
+        </div>
+        <div class="col-sm-4">
+          <%= render '/user_header' unless current_user.nil? %>
+        </div>
+      </div>
 
+    </div>
+    <%= render '/navigation' %>        
+    <%#= render '/schedule' %>
+    <%= render '/flash_msg' %>
+
+    <div id="primary-content" class="container">
+      <div class="row">
+        <div id="page-content-wrapper" class="col-sm order-sm-2 mx-3 py-4 px-4">
+          <div id="page-content" class="p-3">
+            <%= yield %>
+          </div>
+        </div>
+        <%= render '/endorsements' %>
+      </div>
+    </div>
     <%= render '/footer' %>
   </body>
 </html>

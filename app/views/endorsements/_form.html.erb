@@ -1,0 +1,47 @@
+<%= form_with(model: endorsement, local: true) do |form| %>
+  <% if endorsement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(endorsement.errors.count, "error") %> prohibited this endorsement from being saved:</h2>
+
+      <ul>
+        <% endorsement.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :affiliate_id %>
+    <%= form.text_field :affiliate_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :caption %>
+    <%= form.text_field :caption %>
+  </div>
+
+  <div class="field">
+    <%= form.label :enabled %>
+    <%= form.check_box :enabled %>
+  </div>
+
+  <div class="field">
+    <%= form.label :media_uri %>
+    <%= form.text_field :media_uri %>
+  </div>
+
+  <div class="field">
+    <%= form.label :media_type %>
+    <%= form.text_field :media_type %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

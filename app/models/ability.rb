@@ -6,9 +6,10 @@ class Ability
   def initialize(user)
 
     if user.present?
-      can :read, AlleyPage
+      can :read, Page
+      can :read, Endorsement
       can :read, Link
-      can :read, Promo
+
       can :read, Event
 
       if user.moderator?
@@ -17,8 +18,8 @@ class Ability
         end
       end
 
-      if user.vendor?
-        can :manage, Vendor, {user_id: user.id}
+      if user.affiliate?
+        can :manage, Affiliate, {user_id: user.id}
 	can :manage, Event, {user_id: user.id}
 	can :manage, Room, {owner_id: user.id}
 	can :create, Event
@@ -31,11 +32,12 @@ class Ability
       end
 
       if user.admin?
-	can :manage, Vendor
+	can :manage, Page
+	can :manage, Affiliate
+        can :manage, Endorsement
+
 	can :manage, Room
-	can :manage, AlleyPage
-	can :read, Link
-	can :manage, Promo
+	can :manage, Link
 	can :manage, Event
       end
     end
