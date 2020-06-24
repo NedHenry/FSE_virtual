@@ -6,6 +6,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -28,7 +29,7 @@
     <div id="primary-content" class="container">
       <div class="row">
         <div id="page-content-wrapper" class="col-sm order-sm-2 mx-3 py-4 px-4">
-          <div id="page-content" class="p-3">
+          <div id="page-content" class="px-3 pb-3">
             <%= yield %>
           </div>
         </div>
