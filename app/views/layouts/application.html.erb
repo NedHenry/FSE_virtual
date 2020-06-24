@@ -31,11 +31,13 @@
         <div id="page-content-wrapper" class="col-sm order-sm-2 mx-3 py-4 px-4">
           <div id="page-content" class="px-3 pb-3">
             <%= yield %>
+            <%= render '/donate' %>
           </div>
         </div>
         <%= render '/endorsements' %>
       </div>
     </div>
+    
     <%= render '/footer' %>
   </body>
 </html>
