@@ -72,6 +72,15 @@ class PagesController < ApplicationController
   def set_page
     @page = Page.find(params[:id]) if params[:id].present?
     @page = Page.find_by(slug: params["slug"]) if params["slug"].present?
+    if params["slug"].present? && @page.nil?
+      if File.exist?(File.join(Rails.root, "app/views/pages","_page_#{params["slug"]}.html.erb"))
+        @page = Page.create(title: @params['slug'].titleize,
+                            description: "This is a sample page",
+                            main_html: '<ul><li><a href="#">Sample Link</a>?,li><li><a href="#">Sample Link</a>?,li><li><a href="#">Sample Link</a>?,li><li><a href="#">Sample Link</a>?,li></ul>',
+                            slug: params["slug"])
+      end
+    end
+    @page=Page.find_by(slug: "not-found") if @page.nil?        
   end
 
   # Only allow a list of trusted parameters through.
