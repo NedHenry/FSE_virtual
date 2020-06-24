@@ -3,19 +3,32 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .endorsements li, #page-content {
-    background-color: rgba(gray,0.7);
     border: 5px solid yellow;
 }
 
 #page-content {
     min-height: 400px;
+    background-color: rgba(gray,0.7);
+    position: relative;
 }
 
 .endorsements ul {
     li {
         overflow:hidden;
+        background-color: black;
     }
-    list-style:none}
+    list-style:none
+}
+
+#donate-link {
+    position: absolute;
+    bottom: 3px;
+    width: 100%;
+    a{
+        background-color: rgba(128,128,0,0.6);
+        padding: 0.3em;
+    }
+}
 
 div#page-content-wrapper {
   background-image: url(<%= asset_path "fse_0.jpg" %>) 
