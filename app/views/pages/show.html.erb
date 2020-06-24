@@ -1,15 +1,12 @@
-<p id="notice"><%= notice %></p>
-
-<h1>
+<h2 class="text-center">
   <%= @page.title %>
-</h1>
+</h2>
 
-<p class="description">
+<h4 class="description text-center">
   <%= @page.description %>
-</p>
+</h4>
 
-<%= @page.main_html.html_safe %>
-<%= render @page.view_partial_name %>
+<%= render @page.view_partial_name, html: @page.main_html %>
 
 <%# if current_user.can? :edit, @page %>
   <%= link_to 'Edit', edit_page_path(@page) %> |
