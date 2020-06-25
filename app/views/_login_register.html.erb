@@ -1,8 +1,10 @@
 <div id='login_register'>
   <div id="login_choice">
-    <%= @login_choice_text %>
-    <button onClick="$('div#login_choice').hide(); $('div#login-form').show()"> <%= t('sign_in') %> </button>
-    <button  onClick="$('div#login_choice').hide(); $('div#register-form').show()"> <%= t('register') %> </button>
+    <h4><%= @login_choice_text %></h4>
+    <div id="login-buttons">
+      <button onClick="$('div#login_choice').hide(); $('div#register-form').hide(); $('div#login-form').show()"> <%= t('Log in') %> </button>
+      <button  onClick="$('div#login_choice').hide(); $('div#login-form').hide(); $('div#register-form').show()"> <%= t('register') %> </button>
+    </div>
   </div>
   <%= render '/login' %>
   <%= render '/register' %>
