@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :require_login
+  load_and_authorize_resource
   before_action :set_page, only: [:show, :edit, :update, :destroy]
 
   # GET /pages
@@ -10,6 +10,10 @@ class PagesController < ApplicationController
 
   def require_login
     redirect_to :controller => 'welcome', :action => 'show' unless user_signed_in?
+  end
+
+  def require_admin
+    redirect_to :controller => 'welcome', :action => 'show' unless current_user.try(:admin?)
   end
 
   # GET /pages/1

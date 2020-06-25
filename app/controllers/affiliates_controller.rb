@@ -1,10 +1,6 @@
 class AffiliatesController < ApplicationController
+  load_and_authorize_resource
   before_action :set_affiliate, only: [:show, :edit, :update, :destroy]
-  before_action :require_login
-
-   def require_login
-    redirect_to :controller => 'welcome', :action => 'show' unless user_signed_in?
-  end
 
   # GET /affiliates
   # GET /affiliates.json
