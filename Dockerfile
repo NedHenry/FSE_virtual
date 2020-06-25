@@ -37,6 +37,7 @@ RUN useradd -ms /bin/bash folsom
 RUN chown -R folsom:folsom /fse_virtual
 RUN chown -R folsom:folsom /usr/local/bundle
 USER folsom
+RUN bundle exec yarn install --check-files
 
 # Start the main process.
 CMD ["rails", "server", "-b", "0.0.0.0"]
