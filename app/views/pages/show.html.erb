@@ -9,8 +9,8 @@
 <%= render @page.view_partial_name, html: @page.main_html %>
 
 <div class="links">
-<%# if current_user.can? :edit, @page %>
+<% if can? :edit, @page %>
   <%= link_to 'Edit', edit_page_path(@page) %> |
-<%# end %>
-<%= link_to 'Back', pages_path %>
+  <%= link_to 'Back', pages_path %>
+<% end %>
 </div>
