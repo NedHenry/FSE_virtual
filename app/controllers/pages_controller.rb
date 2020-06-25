@@ -78,7 +78,7 @@ class PagesController < ApplicationController
     @page = Page.find_by(slug: params["slug"]) if params["slug"].present?
     if params["slug"].present? && @page.nil?
       if File.exist?(File.join(Rails.root, "app/views/pages","_page_#{params["slug"]}.html.erb"))
-        @page = Page.create(title: @params['slug'].titleize,
+        @page = Page.create(title: params['slug'].titleize,
                             description: "This is a sample page",
                             main_html: '<ul><li><a href="#">Sample Link</a>?,li><li><a href="#">Sample Link</a>?,li><li><a href="#">Sample Link</a>?,li><li><a href="#">Sample Link</a>?,li></ul>',
                             slug: params["slug"])
