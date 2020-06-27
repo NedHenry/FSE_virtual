@@ -1,5 +1,13 @@
 @import './bootstrap_custom.scss';
 
+a {
+    color: #badbff;
+}
+
+a:hover{
+    color: #7498bf;
+}
+
 .embed-container {
     position: relative;
     padding-bottom: 56.25%;
@@ -15,6 +23,29 @@
     height: 100%;
 }
 
+.list-group-item {
+    background-color: inherit;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
 ul {
     list-style: none
+}
+
+body>div>div.alert {
+    display: inline-block;
+}
+
+div#list-view {
+    max-width: 400px;
+    max-height: 450px;
+    overflow-y: scroll;
+    margin-left: auto;
+    margin-right: auto;
+    .event-title, .event-time {
+        display: inline-block;
+    }
+    .event-location, .event-duration {
+        float:right;
+    }
 }
