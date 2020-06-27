@@ -11,7 +11,7 @@ class AddFieldsToUsers < ActiveRecord::Migration[6.0]
     add_column :users, :unconfirmed_email, :string
     add_column :users, :failed_attempts, :integer
     add_column :users, :unlock_token, :string
-    add_column :users, :unlocked_at, :datetime
+    add_column :users, :locked_at, :datetime
     add_column :users, :provider, :string
     add_column :users, :uid,:string
 
