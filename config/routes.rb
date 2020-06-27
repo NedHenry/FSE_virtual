@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'homepage#show'
 
+  get '/schedule.json', to: 'schedule#json'
+  
   get '/:slug', to: "pages#show"
 end
