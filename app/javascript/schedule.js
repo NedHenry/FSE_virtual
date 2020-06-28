@@ -1,6 +1,8 @@
 var schedule_url = "/schedule.json";
 var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-$.getJSON(schedule_url,{},load_schedules);
+$(document).ready(function(){
+    $.getJSON(schedule_url,{},load_schedules);
+});
 
 function load_schedules(events) {
     load_list_schedules(events);
