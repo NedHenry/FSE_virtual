@@ -5,4 +5,15 @@ class ApplicationController < ActionController::Base
       format.html { redirect_to main_app.root_url, :alert => exception.message }
     end
   end
+
+  def authenticate_admin_user!
+    redirect_to main_app.root_url, :alert => 'You must log in to access this page' unless current_user.present?
+    redirect_to main_app.root_url, :alert => 'You are not allowed to access this page' unless current_user.admin?
+    return true
+  end
+
+  def access_denied
+    redirect_to main_app.root_url, :alert => 'You are not allowed to access this page'
+  end
+  
 end
