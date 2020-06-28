@@ -35,6 +35,7 @@ class Ability
 	can :manage, Affiliate
         can :manage, Endorsement
         can :read, ActiveAdmin::Page
+        can :manage, User
 #        can :manage, ActiveAdmin::Resource
 #	can :manage, Room
 #	can :manage, Link
