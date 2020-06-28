@@ -7,9 +7,15 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_admin_user!
-    redirect_to main_app.root_url, :alert => 'You must log in to access this page' unless current_user.present?
-    redirect_to main_app.root_url, :alert => 'You are not allowed to access this page' unless current_user.admin?
-    return true
+    if current_user.nil?
+      redirect_to main_app.root_url, :alert => 'You must log in to access this page'
+      return false
+    elsif  !current_user.admin?
+      redirect_to main_app.root_url, :alert => 'You are not allowed to access this page'
+      return false
+    else
+      return true
+    end
   end
 
   def access_denied args=nil
