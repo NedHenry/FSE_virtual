@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     return true
   end
 
-  def access_denied args
+  def access_denied args=nil
     redirect_to main_app.root_url, :alert => 'You are not allowed to access this page'
   end
   
