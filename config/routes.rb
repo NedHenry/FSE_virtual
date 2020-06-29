@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   root 'homepage#show'
 
   get '/schedule.json', to: 'schedule#json'
+
+  get "user/#username", to: 'user#show'
+  get 'user/edit/#username', to: 'user#edit'
   
   get '/:slug', to: "pages#show"
+
 end
