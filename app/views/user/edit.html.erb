@@ -1,2 +1,6 @@
-<h1>User#edit</h1>
-<p>Find me in app/views/user/edit.html.erb</p>
+<h1>User your profile</h1>
+<% form_with do |f| %>
+  <%= f.label "Avatar Image" %>
+  <%= f.file_field :avatar %>
+<% end>
+
