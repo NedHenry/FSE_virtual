@@ -73,7 +73,7 @@ Rails.application.configure do
     :enable_starttls_auto => true
   }
 
-  config.action_mailer.default_url_options = { :host => '54.193.12.44' }
+  config.action_mailer.default_url_options = { :host => '52.52.165.178' }
   
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
