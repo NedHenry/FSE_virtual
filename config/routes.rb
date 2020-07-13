@@ -15,7 +15,10 @@ Rails.application.routes.draw do
   get '/schedule.json', to: 'schedule#json'
 
   get "user/:username", to: 'user#show'
-  get 'user/edit/:username', to: 'user#edit'
+  get 'user/:username/edit', to: 'user#edit'
+  post 'user/:username/update', to: 'user#update'
+  patch 'user/:username/update', to: 'user#update'
+  get 'user/:username/update', to: 'user#update'
   
   get '/:slug', to: "pages#show"
 
