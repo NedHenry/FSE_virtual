@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Folsom St Events</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <script> clash_name = "<%= clashfinder_name %>" </script>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body class="bg-dark text-light">
+    <div id="header-bar" class="container-fluid">
+      <div class="row">
+        <div class="col-sm-8">
+          <%= render '/masthead' %>
+        </div>
+        <div class="col-sm-4">
+          <%= render '/user_header' unless current_user.nil? %>
+        </div>
+      </div>
+
+    </div>
+    <%= render '/navigation' %>        
+    <%#= render '/schedule' %>
+    <div class="text-center">
+      <%= render '/flash_msg' %>
+    </div>
+    <div id="primary-content" class="container">
+      <div class="row">
+        <%= render '/endorsements_singlerow' %>
+      </div>
+
+      <div class="row">
+            <%= yield %>
+      </div>
+      <div class="row">
+        <%= render '/endorsements_singlerow' %>
+      </div>
+    </div>
+    
+    <%= render '/footer' %>
+  </body>
+</html>
