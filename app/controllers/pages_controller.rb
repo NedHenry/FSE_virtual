@@ -20,6 +20,9 @@ class PagesController < ApplicationController
   # GET /pages/1.json
   def show
     @page=Page.find_by(slug: "not-found") if @page.nil?
+    if @page.layout.present?
+      render :layout => @page.layout
+    end
   end
 
   # GET /pages/new

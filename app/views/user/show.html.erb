@@ -1,0 +1,7 @@
+<h2 class="text-center"><%= @user.display_name || @user.username%></h2>
+<%= image_tag url_for(@user.avatar.variant(resize: "300x400>")) if @user.avatar.present? %>
+<p><strong>Pronouns:</strong><%= @user.pronouns %></p>
+<p><strong>Fetlife:</strong><%= @user.fetlife %></p>
+<p><strong>Description:</strong><%= @user.description %></p>
+
+

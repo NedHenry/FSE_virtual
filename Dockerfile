@@ -11,6 +11,7 @@ RUN apt-get -y update && \
         curl \
         ssh \
         mariadb-client \
+        imagemagick \
         libnss3-dev libgconf-2-4 libnss3 libxss1\
         default-libmysqlclient-dev && \
       wget -qO- https://deb.nodesource.com/setup_12.x  | bash - && \

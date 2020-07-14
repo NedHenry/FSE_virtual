@@ -1,8 +1,8 @@
-<h2 class="text-center">
+<h2 class="page-title text-center <%= @page.layout.present? ? 'hidden' : "" %>">
   <%= @page.title %>
 </h2>
 
-<h4 class="description text-center">
+<h4 class="description text-center <%= @page.layout.present? ? 'hidden' : "" %>">
   <%= @page.description %>
 </h4>
 

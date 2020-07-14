@@ -1,0 +1,37 @@
+<h2 class="text-center">
+  <%= @user.display_name || @user.username %> - Edit Profile
+</h2>
+<%= form_with(model: @user, url: "/user/#{@user.username}/update", class: "user-profile") do |f| %>
+  <div class=form-group>
+    <%= f.label(:display_name) %>
+    <%= f.text_field(:display_name) %>
+  </div>
+  <div class=form-group>
+    <%= f.label(:email) %>
+    <%= f.text_field(:email) %>
+  </div>
+  <div class=form-group>
+    <%= f.label(:username) %>
+    <%= f.text_field(:username) %>
+  </div>
+  <div class=form-group>
+    <%= f.label(:avatar) %>
+    <%= f.file_field(:avatar) %>
+  </div>
+  <div class=form-group>
+    <%= f.label(:pronouns) %>
+    <%= f.text_field(:pronouns) %>
+  </div>
+  <div class=form-group>
+    <%= f.label(:fetlife) %>
+    <%= f.text_field(:fetlife) %>
+  </div>
+  <div class=form-group>
+    <%= f.label(:description) %>
+    <%= f.text_area(:description) %>
+  </div>
+  <div class=form-group>
+    <%= f.submit %>
+  </div>
+<% end %>
+

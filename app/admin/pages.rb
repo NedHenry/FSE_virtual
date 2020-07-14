@@ -5,7 +5,7 @@ ActiveAdmin.register Page do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :title, :description, :main_html, :slug
+  permit_params :title, :description, :main_html, :slug, :layout
   #
   # or
   #
