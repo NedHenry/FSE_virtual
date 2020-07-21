@@ -49,6 +49,7 @@ AT ALL TIMES, INCLUDING ALL FOLSOM STREET EVENTS STAFF</h3>
 
 <div class="content-section my-2 p-3" id="verification">
   <%= form_with(url: "/confirm_age", method: "get", local: true) do %>
+  <%= hidden_field_tag('redirect', params['redirect']) %>
   <div class="container">
     <div class="row">
       <div class="col-1-sm mx-2">
