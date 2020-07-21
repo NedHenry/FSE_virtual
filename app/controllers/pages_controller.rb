@@ -1,19 +1,11 @@
 class PagesController < ApplicationController
-  load_and_authorize_resource
+#  load_and_authorize_resource
   before_action :set_page, only: [:show, :edit, :update, :destroy]
 
   # GET /pages
   # GET /pages.json
   def index
     @pages = Page.all
-  end
-
-  def require_login
-    redirect_to :controller => 'welcome', :action => 'show' unless user_signed_in?
-  end
-
-  def require_admin
-    redirect_to :controller => 'welcome', :action => 'show' unless current_user.try(:admin?)
   end
 
   # GET /pages/1
