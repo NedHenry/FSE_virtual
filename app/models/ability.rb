@@ -5,9 +5,12 @@ class Ability
 
   def initialize(user)
 
+    can :show, Page
+    can :show, Endorsement
+    
     if user.present?
-      can :show, Page
-      can :show, Endorsement
+#      can :show, Page
+#      can :show, Endorsement
 
 #      can :read, Event
 
