@@ -1,5 +1,19 @@
 class WelcomeController < ApplicationController
+
+  skip_before_action :verify_age
+
   def show
-    @login_choice_text = "Hey there. First time?"
+  #  @login_choice_text = "Hey there. First time?"
   end
+
+  def confirm_age
+    cookies.encrypted["age_verify"] = request.remote_ip
+    if params['redirect'].present?
+      redirect_to URI.unescape(params['redirect'])
+    else
+      redirect_to "/"
+    end
+    
+  end
+
 end
