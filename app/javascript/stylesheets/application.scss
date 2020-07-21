@@ -4,9 +4,62 @@ a {
     color: #badbff;
 }
 
+body {
+    background-color: black;
+}
+
 a:hover{
     color: #7498bf;
 }
+
+.text-yellow {
+    color: yellow;
+}
+a.text-yellow:hover {
+    color: darken(yellow, 10%);
+}
+
+.btn-primary {
+    background-color: yellow;
+    border-color: yellow;
+    color:black;
+}
+
+div#logo-div {
+    height: 30px;
+}
+
+nav.navbar {
+    width: 100%;
+    .navbar-toggler {
+        border: 1px solid white;
+        border-radius: 5px;
+    }
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+    
+    .navbar-brand {
+        font-size: 3.5em;
+        line-height: 1em;
+    }
+    ul.navbar-nav {
+        li.nav-item:hover {
+            background-color: darken(yellow, 10%);
+        }
+        li.nav-item {
+            background-color: yellow;
+            a {
+                color: black;
+            }
+        }
+    }
+}
+
+@media (min-width: 544px) {  
+    nav.navbar .navbar-brand {font-size:4.5rem;} /*1rem = 16px*/
+}
+
 
 .embed-container {
     position: relative;
