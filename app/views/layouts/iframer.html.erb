@@ -12,28 +12,23 @@
 
   </head>
 
-  <body class="bg-dark text-light">
-    <div id="header-bar" class="container-fluid">
+
+    <body id="fse_body" class="text-light">
+    <div id="header-bar" class="container">
       <div class="row">
-        <div class="col-sm-8">
-          <%= render '/masthead' %>
-        </div>
-        <div class="col-sm-4">
-          <%= render '/user_header' unless current_user.nil? %>
+        <div id="logo-div" class="col-sm text-right mt-3">
+          <img src="<%= asset_path 'FSEventsLogo-bw.png' %>">
         </div>
       </div>
-
+      <div class="row">
+        <%= render '/navigation' %>
+      </div>
     </div>
-    <%= render '/navigation' %>        
     <%#= render '/schedule' %>
     <div class="text-center">
       <%= render '/flash_msg' %>
     </div>
     <div id="primary-content" class="container">
-      <div class="row">
-        <%= render '/endorsements_singlerow' %>
-      </div>
-
       <div class="row">
             <%= yield %>
       </div>
