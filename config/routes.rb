@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   
   get 'welcome', to: "welcome#show"
+  get "rules", to: "welcome#rules"
+  
   get 'confirm_age', to: "welcome#confirm_age"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'homepage#show'
