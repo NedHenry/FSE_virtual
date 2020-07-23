@@ -1,14 +1,7 @@
 <div class="endorsements row single-row">
-  <div class="col-sm mx-3 p-2 my-2">
-    An Endorsement
+  <% random_endorsements(4).each do |e10t|
+  <div class="e10t col-sm mx-3 p-2 my-2">
+    <%= image_tag url_for(e10t.banner.variant(resize: "200x300>")), alt: e10t.name, title: e10t.caption %>
   </div>
-  <div class="col-sm mx-3 p-2 my-2">
-    Another Endorsement
-  </div>
-  <div class="col-sm p-2 mx-3 my-2">
-    An Endorsement
-  </div>
-  <div class="col-sm p-2 mx-3 my-2">
-    Another Endorsement
-  </div>
+  <% end %>
 </div>

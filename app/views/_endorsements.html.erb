@@ -1,21 +1,20 @@
+<% e10ts = random_endorsements(6) %>
 <div class="endorsements left col-sm-2 order-sm-1">
   <ul class="list-group">
-    <li class="my-2 p-2">
-      An Endorsement
+    <% e10ts[0..2].each do |e10t| %>
+    <li class="e10t my-2 p-2">
+      <%= image_tag url_for(e10t.banner.variant(resize: "200x300>")), alt: e10t.name, title: e10t.caption %>
     </li>
-    <li class="my-2 p-2">
-      Another Endorsement
-    </l>
+    <% end %>
   </ul>
 </div>
 <div class="endorsements right col-sm-2 order-sm-3">
   <ul class="list-group">
-    <li class="p-2 my-2">
-      An Endorsement
+    <% e10ts[3..5].each do |e10t| %>
+    <li class="e10t my-2 p-2">
+      <%= image_tag url_for(e10t.banner.variant(resize: "200x300>")), alt: e10t.name, title: e10t.caption %>
     </li>
-    <li class="p-2 my-2">
-      Another Endorsement
-    </li>
+    <% end %>
   </ul>
 
 </div>
