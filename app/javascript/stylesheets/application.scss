@@ -1,22 +1,15 @@
 @import './bootstrap_custom.scss';
 
-a {
-    color: #badbff;
+a, .text-yellow {
+    color: yellow;
+}
+
+a:hover {
+    color: darken(yellow, 10%);
 }
 
 body {
     background-color: black;
-}
-
-a:hover{
-    color: #7498bf;
-}
-
-.text-yellow {
-    color: yellow;
-}
-a.text-yellow:hover {
-    color: darken(yellow, 10%);
 }
 
 .btn-primary {
@@ -54,6 +47,11 @@ nav.navbar {
             }
         }
     }
+}
+
+#direct_twitch_link a {
+    background-color: black;
+    color: yellow;
 }
 
 @media (min-width: 544px) {  
