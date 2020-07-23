@@ -7,6 +7,7 @@ ActiveAdmin.register Endorsement do
     column :name
     column :caption
     column :enabled
+    column :link
     column :media_uri
     column :media_type
     column :banner
@@ -17,6 +18,7 @@ ActiveAdmin.register Endorsement do
     attributes_table do
       row :name
       row :caption
+      row :link
       row :enabled
       row :banner do |e10t|
         image_tag url_for(e10t.banner.variant(resize: "200x300>"))
@@ -33,6 +35,7 @@ ActiveAdmin.register Endorsement do
     f.inputs do
       f.input :name
       f.input :caption
+      f.input :link
       f.input :enabled, as: :boolean
       f.input :affiliate_id
       f.input :media_uri
