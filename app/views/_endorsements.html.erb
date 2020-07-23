@@ -1,18 +1,20 @@
 <% e10ts = random_endorsements(6) %>
+<% first_set = e10ts.take(3) %>
+<% second_set = e10ts - e10ts.take(3) %>
 <div class="endorsements left col-sm-2 order-sm-1">
   <ul class="list-group">
-    <% e10ts[0..2].each do |e10t| %>
+    <% first_set.each do |e10t| %>
     <li class="e10t my-2 p-2">
-      <%= image_tag url_for(e10t.banner.variant(resize: "200x300>")), alt: e10t.name, title: e10t.caption %>
+      <%= image_tag url_for(e10t.banner.variant(resize: "200x133")), alt: e10t.name, title: e10t.caption %>
     </li>
     <% end %>
   </ul>
 </div>
 <div class="endorsements right col-sm-2 order-sm-3">
   <ul class="list-group">
-    <% e10ts[3..5].each do |e10t| %>
+    <% second_set.each do |e10t| %>
     <li class="e10t my-2 p-2">
-      <%= image_tag url_for(e10t.banner.variant(resize: "200x300>")), alt: e10t.name, title: e10t.caption %>
+      <%= image_tag url_for(e10t.banner.variant(resize: "200x133")), alt: e10t.name, title: e10t.caption %>
     </li>
     <% end %>
   </ul>
