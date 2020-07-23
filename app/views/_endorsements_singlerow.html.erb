@@ -1,6 +1,6 @@
 <div class="endorsements row single-row">
-  <% random_endorsements(4).each do |e10t|
-     <div class="e10t col-sm mx-3 p-2 my-2">
+  <% random_endorsements(4).each do |e10t| %>
+     <div class="e10t col-sm mx-3 my-2">
        <a href="<%= e10t.link %>">
          <%= image_tag url_for(e10t.banner.variant(resize: "200x300>")), alt: e10t.name, title: e10t.caption %>
        </a>

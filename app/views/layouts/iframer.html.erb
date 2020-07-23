@@ -28,13 +28,9 @@
     <div class="text-center">
       <%= render '/flash_msg' %>
     </div>
-    <div id="primary-content" class="container">
-      <div class="row">
-            <%= yield %>
-      </div>
-      <div class="row">
-        <%= render '/endorsements_singlerow' %>
-      </div>
+    <div id="primary-content">
+      <%= yield %>
+      <%= render '/endorsements_singlerow' %>
     </div>
     
     <%= render '/footer' %>
