@@ -1,5 +1,11 @@
 class WelcomeController < ApplicationController
 
+  layout :welcome_layout
+
+  def welcome_layout
+    params['demo']="show" ? "application" : "splash"
+  end
+
   skip_before_action :verify_age
 
   def show
