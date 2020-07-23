@@ -2,37 +2,45 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.endorsements li{
-    border: 5px solid yellow;
-}
-
 #page-content {
     font-size: 1.3em;
     min-height: 350px;
     div.content-section {
         border: 2px solid yellow;
         position: relative;
+        background: rgba(0,0,0,0.8);
     }
 }
 
-.endorsements ul {
-  li {
-    overflow:hidden;
-    background-color: black;
-  }
-  list-style:none
+#primary-content {
+    background-image: url("<%= asset_path('background_foot_image.png') %>");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    
 }
 
-.endorsements.single-row {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.endorsements div {
-  overflow:hidden;
-  display: inline-block;
-  background-color: black;
-  border: 5px solid yellow;
+.endorsements {
+    ul {
+        list-style: none;
+    }  
+    .e10t {
+        width: 200px;
+        height: 133px;
+        img{
+            width: 200px;
+            height: 133px;
+        }
+        overflow: hidden;
+        background-color: black;
+        border: 2px solid yellow;
+    }
+    .single-row {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    div {
+        display: inline-block;
+    }
 }
 
 #donate-link {
@@ -47,7 +55,7 @@
 }
 
 div#page-content-wrapper {
-  background-image: url(<%= asset_path "fse_0.jpg" %>) 
+    background-image: url(<%= asset_path "fse_0.jpg" %>) 
 }
 
 div.endorsements {
@@ -65,8 +73,8 @@ body {
 
 #page-content {
     a:hover, a:active {
-       color: #d9eafd !important;
-    }
+                 color: #d9eafd !important;
+             }
 
     li.active a {
         color: #aaaaaa !important;
