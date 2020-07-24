@@ -1,3 +1,29 @@
-<h2 class="text-center">Welcome to Folsom St Events</h2>
-<p class="text-center">Please <a href="javacsript:;" onClick="$('div#login_choice').hide(); $('div#register-form').hide(); $('div#login-form').show()">log in</a> or <a href="javacsript:;" onClick="$('div#login_choice').hide(); $('div#login-form').hide(); $('div#register-form').show()">create an account</a> to continue</p>
-<%= render '/login_register' %>
+
+<div class="mb-4" id="page-header">
+  <h2 class="text-center">Welcome to Up Your Alley</h2>
+  <p class="text-center">This site is for adults only. Please verify that you are over the age of 18 and have read the community guidelines below</p>
+</div>
+
+<%= render '/donations' %>
+<%= render '/rules' %>
+
+<div class="content-section my-2 p-3" id="verification">
+  <%= form_with(url: "/confirm_age", method: "get", local: true) do %>
+  <%= hidden_field_tag('redirect', params['redirect']) %>
+  <div class="container">
+    <div class="row">
+      <div class="col-1-sm mx-2">
+        <%= check_box_tag(:confirmation) %>
+      </div>
+      <div class="col-11-sm">
+        <%= label_tag(:confirmation, "I verify that I am over the age of 18 and have read the Community Agreements") %>
+      </div>
+    </div>
+    <div class="row align-center">
+      <div class="col">
+        <%= submit_tag("Enter") %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

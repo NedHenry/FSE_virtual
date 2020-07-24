@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_13_010213) do
+ActiveRecord::Schema.define(version: 2020_07_23_225409) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "namespace"
@@ -66,6 +66,9 @@ ActiveRecord::Schema.define(version: 2020_07_13_010213) do
     t.string "media_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "link"
+    t.integer "weight"
+    t.string "endorsement_type"
   end
 
   create_table "pages", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|

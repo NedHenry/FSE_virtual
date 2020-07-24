@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  load_and_authorize_resource
+#  load_and_authorize_resource
   before_action :set_page, only: [:show, :edit, :update, :destroy]
 
   # GET /pages
@@ -8,17 +8,10 @@ class PagesController < ApplicationController
     @pages = Page.all
   end
 
-  def require_login
-    redirect_to :controller => 'welcome', :action => 'show' unless user_signed_in?
-  end
-
-  def require_admin
-    redirect_to :controller => 'welcome', :action => 'show' unless current_user.try(:admin?)
-  end
-
   # GET /pages/1
   # GET /pages/1.json
   def show
+    redirect_to :controller => 'welcome', :action => 'show' unless (user_signed_in? || params["demo"]=="show")
     @page=Page.find_by(slug: "not-found") if @page.nil?
     if @page.layout.present?
       render :layout => @page.layout

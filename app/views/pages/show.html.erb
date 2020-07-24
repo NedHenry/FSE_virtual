@@ -1,10 +1,7 @@
 <h2 class="page-title text-center <%= @page.layout.present? ? 'hidden' : "" %>">
-  <%= @page.title %>
+  <%= @page.description %>
 </h2>
 
-<h4 class="description text-center <%= @page.layout.present? ? 'hidden' : "" %>">
-  <%= @page.description %>
-</h4>
 
 <%= render @page.view_partial_name, html: @page.main_html %>
 

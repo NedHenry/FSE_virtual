@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Folsom St Events</title>
+    <title>Up Your Alley</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= favicon_link_tag asset_path('FSE_YELLOW_FLAV_16x16.png') %>
+    
     <script> clash_name = "<%= clashfinder_name %>" </script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -12,30 +13,25 @@
 
   </head>
 
-  <body class="bg-dark text-light">
-    <div id="header-bar" class="container-fluid">
+  <body id="fse_body" class="text-light">
+    <div id="header-bar" class="container">
       <div class="row">
-        <div class="col-sm-8">
-          <%= render '/masthead' %>
-        </div>
-        <div class="col-sm-4">
-          <%= render '/user_header' unless current_user.nil? %>
+        <div id="logo-div" class="col-sm text-right mt-3">
+          <img src="<%= asset_path 'FSEventsLogo-bw.png' %>">
         </div>
       </div>
-
+      <div class="row">
+        <%= render '/navigation' %>
+      </div>
     </div>
-    <%= render '/navigation' %>        
     <%#= render '/schedule' %>
     <div class="text-center">
       <%= render '/flash_msg' %>
     </div>
     <div id="primary-content" class="container">
       <div class="row">
-        <div id="page-content-wrapper" class="col-sm order-sm-2 mx-3 py-4 px-4">
-          <div id="page-content" class="px-3 pb-5">
-            <%= yield %>
-            <%= render '/donate' %>
-          </div>
+        <div id="page-content" class="col-sm order-sm-2 mx-3 py-4 px-4">
+          <%= yield %>
         </div>
         <%= render '/endorsements' %>
       </div>
