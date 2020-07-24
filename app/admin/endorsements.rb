@@ -1,5 +1,5 @@
 ActiveAdmin.register Endorsement do
-  permit_params :affiliate_id,:name,:caption,:enabled,:media_uri,:media_type, :banner, :endorsement_type, :weight
+  permit_params :affiliate_id,:name,:caption,:enabled,:media_uri,:media_type, :banner, :endorsement_type, :weight, :link
 
   index do
     selectable_column
