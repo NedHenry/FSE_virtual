@@ -2,7 +2,7 @@
   <% random_sponsors(3).each do |e10t| %>
      <div class="e10t col-md mx-2 my-2 p-2 text-center">
        <a href="<%= e10t.link %>">
-         <h4>PREMIER SPONSOR</h4>
+         <p class="e10t-head h4">PREMIER SPONSOR</p>
          <%= image_tag url_for(e10t.banner.variant(resize: "250x167")), alt: e10t.name, title: e10t.caption %>
        </a>
      </div>

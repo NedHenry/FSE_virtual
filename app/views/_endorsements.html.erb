@@ -4,8 +4,9 @@
 <div class="endorsements left col-lg-2 order-lg-1">
   <ul class="list-group">
     <% first_set.each do |e10t| %>
-    <li class="e10t my-2 mx-auto">
+    <li class="e10t p-1 my-2 mx-auto text-center">
       <a href="<%= e10t.link %>">
+        <p class="e10t-head  mt-0 mb-2 p0">PREMIER SPONSOR</p>
         <%= image_tag url_for(e10t.banner.variant(resize: "250x167")), alt: e10t.name, title: e10t.caption %>
       </a>
     </li>
@@ -15,8 +16,9 @@
 <div class="endorsements right col-lg-2 order-lg-3">
   <ul class="list-group">
     <% second_set.each do |e10t| %>
-    <li class="e10t my-2 mx-auto">
+    <li class="e10t p-1 my-2 mx-auto text-center">
       <a href="<%= e10t.link %>">
+        <p class="e10t-head  mt-0 mb-2 p0">PREMIER SPONSOR</p>
         <%= image_tag url_for(e10t.banner.variant(resize: "200x133")), alt: e10t.name, title: e10t.caption %>
       </a>
     </li>

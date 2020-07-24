@@ -1,5 +1,7 @@
+<% if top_banner.banner.present? %>
 <div class="endorsements top-banner my-3 text-center">
   <a href="<%= top_banner.link %>">
     <%= image_tag url_for(top_banner.banner.variant(resize: "700x")), alt: top_banner.name, title: top_banner.caption %>
   </a>
 </div>
+<% end %>
