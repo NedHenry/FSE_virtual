@@ -1,15 +1,17 @@
 <ul class="cruise_space container">
-  <% cruise_spaces.each do |cs| %>
-  <li class="cruise_space row my-5 py-3">
-    <div class="col-lg">
+  <% cruise_spaces.each_slice(2) do |spaces| %>
+  <div class="row my-5">
+    <% spaces.each do |cs| %>
+    <li class="cruise_space col-md mx-2 py-3">
       <a href="<%= cs.link %>">
         <%= image_tag url_for(cs.banner.variant(resize: "300x200>")), alt: cs.name %>
       </a>
-    </div>
-    <div class="col-lg">
-      <p><%= cs.caption %></p>
-    </div>
-  </li>
+      <div class="col-lg">
+        <p><%= cs.caption %></p>
+      </div>
+    </li>
+    <% end %>
+  </div>
   <% end %>
 </ul>
 
