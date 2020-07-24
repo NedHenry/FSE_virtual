@@ -28,5 +28,15 @@ module ApplicationHelper
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
-  
+
+  def app_base_domain
+    case Rails.env
+    when "production"
+      "upyouralley.org"
+    when "staging"
+      "54.215.96.239" 
+    when "development"
+      "localhost"
+    end
+  end
 end
