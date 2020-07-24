@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
 
   def welcome_layout
     "application"
-    params['demo']=="show" ? "application" : "splash"
+#    params['demo']=="show" ? "application" : "splash"
   end
 
   skip_before_action :verify_age
