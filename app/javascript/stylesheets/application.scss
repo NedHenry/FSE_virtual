@@ -40,6 +40,9 @@ nav.navbar {
         li.nav-item:hover {
             background-color: darken(yellow, 10%);
         }
+        li.nav-item.active {
+            background-color: #ffffa3;
+        }
         li.nav-item {
             background-color: yellow;
             a {

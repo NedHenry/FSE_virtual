@@ -9,16 +9,16 @@
   
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item mx-2">
+      <li class="nav-item mx-2 <%= 'active' if current_page?('/') %>">
         <a class="nav-link py-0" href="/">LIVE STREAM<span class="sr-only"></a>
       </li>
-      <li class="nav-item mx-2">
+      <li class="nav-item mx-2 <%= 'active' if current_page?('/cruise') %>">
         <a class="nav-link py-0" href="/cruise">CRUISE/PLAY</a>
       </li>
-      <li class="nav-item mx-2">
+      <li class="nav-item mx-2  <%= 'active' if current_page?('/vendors') %>">
         <a class="nav-link py-0" href="/vendors">VENDOR MART</a>
       </li>
-      <li class="nav-item mx-2">
+      <li class="nav-item mx-2  <%= 'active' if current_page?('/donate') %>">
         <a class="nav-link py-0" href="/donate">DONATE</a>
       </li>
       <li class="nav-item mx-2">
