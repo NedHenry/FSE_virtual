@@ -1,3 +1,29 @@
 <div class="container">
-  <iframe width="100%" height="720" src="https://www.artsteps.com/embed/5f17e0252967620bbed82aa2/1280/720" frameborder="0" allowfullscreen></iframe>
+  <div class="mt-0 mb-5 p-3 content-section">
+    <h3 class="text-center">Folsom Street Vendor Hall</h3>
+    <iframe width="100%" height="720" src="https://www.artsteps.com/embed/5f17e0252967620bbed82aa2/1280/720" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <div class="mb-5 p-3 content-section">
+    <h3 class="text-center">Dore Alley Vendor Hall</h3>
+    <iframe width="100%" height="720" src="https://www.artsteps.com/embed/5f17e0252967620bbed82aa2/1280/720" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <div class="p-3 content-section">
+    <h3 class="text-center">List of Vendors</h3>
+    <div class="container-flex">
+      <% vendors.each_slice(3) do |two_vendors| %>
+      <div class="row my-2">
+        <% two_vendors.each do |vendor| %>
+        <div class="col-sm text-center large">
+          <a href="<%= vendor.link %>" <%= "title=#{vendor.caption}" if vendor.caption.present? %>>
+            <%= vendor.name %>
+          </a>
+        </div>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  
 </div>
