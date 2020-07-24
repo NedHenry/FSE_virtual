@@ -19,11 +19,20 @@ body {
     
 }
 
+div#primary-content div.content-section {
+    background-color: rgba(255,255,0,0.2);
+    border-radius:7px;
+    p{
+        color: #d9d978;
+    }
+}
+
 .endorsements {
     img {
         width: 100%;
         height: auto;
     }
+    
     ul {
         list-style: none;
         li {
@@ -31,11 +40,15 @@ body {
         }       
     }  
     .e10t {
-        img{
+        h4 {
+            color: black;
         }
         overflow: hidden;
-        background-color: black;
+        background-color: yellow;
+        color: black;
         border: 2px solid yellow;
+        border-radius: 2px;
+        max-width: 300px;
     }
     .single-row {
         margin-left: auto;
@@ -44,6 +57,9 @@ body {
     div {
         display: inline-block;
     }
+}
+.endorsements.top-banner a img {
+    width:auto;
 }
 
 #donate-link {

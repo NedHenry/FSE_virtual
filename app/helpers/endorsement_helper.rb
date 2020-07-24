@@ -6,7 +6,15 @@ module EndorsementHelper
   end
 
   def cruise_spaces
-    Endorsement.where(endorsement_type: "cruise").limit(6)
+    Endorsement.where(endorsement_type: "cruise").limit(6).order(Arel.sql('RAND()')) || []
+  end
+
+  def top_banner
+    @top_banner ||= (Endorsement.where(endorsement_type: "top").limit(1).order(Arel.sql('RAND()')).first || Endorsement.new)
+  end
+
+  def vendors
+    @vendors ||= Endorsement.where(endorsement_type: "vendor").order(Arel.sql('RAND()'))
   end
   
 end

@@ -1,7 +1,8 @@
 <div class="endorsements mx-5 row single-row justify-content-center">
-  <% random_sponsors(4).each do |e10t| %>
-     <div class="e10t col-sm mx-3 my-2 px-0">
+  <% random_sponsors(3).each do |e10t| %>
+     <div class="e10t col-md mx-2 my-2 p-2 text-center">
        <a href="<%= e10t.link %>">
+         <h4>PREMIER SPONSOR</h4>
          <%= image_tag url_for(e10t.banner.variant(resize: "250x167")), alt: e10t.name, title: e10t.caption %>
        </a>
      </div>

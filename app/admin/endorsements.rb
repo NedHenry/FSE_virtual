@@ -25,7 +25,7 @@ ActiveAdmin.register Endorsement do
       row :endorsement_type
       row :weight
       row :banner do |e10t|
-        image_tag url_for(e10t.banner.variant(resize: "200x300>"))
+        image_tag url_for(e10t.banner.variant(resize: "200x300>")) if e10t.banner.present?
       end
     end
     active_admin_comments
