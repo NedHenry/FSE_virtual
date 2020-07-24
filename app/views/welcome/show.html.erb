@@ -4,48 +4,8 @@
   <p class="text-center">This site is for adults only. Please verify that you are over the age of 18 and have read the community guidelines below</p>
 </div>
 
-
-<div class="content-section my-4 p-3 text-center" id="donations">
-  <h3 class="text-center section-title">DONATE</h3>
-  <p>Please consider donating to Folsom Street Events to help us sustain our events into 2021 and beyond. Every donation helps.</p>
-  <p>SUGGESTED DONATION: $10</p>
-  <p>Donations of $15 or more get access to a 20% off discount code for Folsom Street Events Merch (code will be in donation confirmation email)<sup>*</sup>. </p>
-  
-  <div class="m-2"><a role="button" href="https://folsomstreetevents.z2systems.com/donation.jsp?campaign=4&" class="btn btn-primary" >MAKE A ONE TIME DONATION </a></div>
-  <div class="m-2"><a role="button" href="https://www.patreon.com/folsomstreetevents" class="btn btn-primary">BECOME A RECURRING DONOR ON PATREON </a></div>
-  <div class="m-2"><a role="button" href="https://www.paypal.me/folsomstreetevents" class="btn btn-primary">MAKE A DONATION ON PAYPAL</a></div>
-  <div class="m-2"><a role="button" href="https://venmo.com/FolsomStreetEvents" class="btn btn-primary">MAKE A DONATION ON VENMO</a></div>
-  
-  <p class="small mt-3">* Donations of $15 or more made on Paypal or Venmo will be emailed or messaged the 20% discount code within 1 hour.</p>
-
-</div>
-
-
-<div class="content-section my-4 p-3" id="rules">
-  <h3 class="text-center section-title">FOLSOM STREET EVENTS VIRTUAL<br>COMMUNITY AGREEMENTS</h3>
-  <p>Explicit, enthusiastic consent is needed for all activities, including screenshots and recording. ASK FIRST. Remember that NO means NO.
-  <p>NO genitals, breasts or buttocks are allowed in the Zoom room due to the terms of service of Twitch.
-  <p>No promotion of illegal activities, including but not limited to illegal substances or solicitation/sex work as mandated by the city, state, and federal law. Folsom Street Events is sex work positive and legally required to ask that such negotiation is kept private.
-  <p>No use of Folsom Street Events’ sites for the purpose of exploiting, harming, or attempting to exploit or harm minors in any way.
-  <p>Folsom Street Events are anti-racist, anti-misogynist, body positive zones! 
-  <p>The following are bannable offenses:
-    <ul>
-      <li>Overt or covert racism or racist beauty standards</li>
-      <li>Gender policing</li>
-      <li>Ableism (discrimination against people with disabilities)</li>
-      <li>Health or concern trolling</li>
-      <li>Body policing (criticizing appearances)</li>
-    </ul>
-  <p>Treat everyone in the space with respect. This includes avoiding gendered language if you don’t know the person’s preferences. If you have concerns about anyone’s presence or play, ask a monitor.</p>
-  <p>Zoom bombing or other harassing behaviors will not be tolerated and violators will be banned.</p>
-  <p>The house safewords are RED and SAFEWORD. If a player uses either of those safewords, a monitor will intervene.</p>
-  <p>Each player is responsible for assessing their own needs and playing within their comfort and interest level.</p>
-  <p>If a scene upsets or triggers you, please take care of yourself and check in with a person you trust. If you experience or witness any nonconsensual behavior, please notify a monitor as soon as possible.</p>
-  <p>Please note that flashing/strobing visuals may be used during the virtual event.</p>
-  <h3>PRACTICE COMMON SENSE AND BE KIND TO ALL PEOPLE 
-AT ALL TIMES, INCLUDING ALL FOLSOM STREET EVENTS STAFF</h3>
-</div>
-
+<%= render '/donations' %>
+<%= render '/rules' %>
 
 <div class="content-section my-2 p-3" id="verification">
   <%= form_with(url: "/confirm_age", method: "get", local: true) do %>
