@@ -23,6 +23,11 @@ div#logo-div {
 }
 
 nav.navbar {
+
+    div.dropdown-toggle {
+        background-color: #FFFFD0
+    }
+    
     width: 100%;
     .navbar-toggler {
         border: 1px solid white;
