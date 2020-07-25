@@ -11,7 +11,7 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.json
   def show
-    redirect_to :controller => 'welcome', :action => 'show' unless (user_signed_in? || params["demo"]=="show")
+#    redirect_to :controller => 'welcome', :action => 'show' unless (user_signed_in? || params["demo"]=="show")
     @page=Page.find_by(slug: "not-found") if @page.nil?
     if @page.layout.present?
       render :layout => @page.layout
