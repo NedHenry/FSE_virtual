@@ -8,15 +8,19 @@
   </button>
   
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav text-center">
       <li class="nav-item mx-2 <%= 'active' if current_page?('/') %>">
         <a class="nav-link py-0" href="/">LIVE STREAM<span class="sr-only"></a>
       </li>
       <li class="nav-item mx-2 <%= 'active' if current_page?('/cruise') %>">
         <a class="nav-link py-0" href="/cruise">CRUISE/PLAY</a>
       </li>
-      <li class="nav-item mx-2  <%= 'active' if current_page?('/vendors') %>">
-        <a class="nav-link py-0" href="/vendors">VENDOR MART</a>
+      <li class="nav-item mx-2 dropdown <%= 'active' if current_page?('/vendors') %>">
+        <a class="nav-link py-0 dropdown-toggle" href="/vendors" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">VENDOR MART</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/vendors?hall=folsom">Folsom Street Vendor Hall</a>
+          <a class="dropdown-item" href="/vendors?hall=dore">Dore Alley Vendor Hall</a>
+        </div>
       </li>
       <li class="nav-item mx-2  <%= 'active' if current_page?('/donate') %>">
         <a class="nav-link py-0" href="/donate">DONATE</a>
