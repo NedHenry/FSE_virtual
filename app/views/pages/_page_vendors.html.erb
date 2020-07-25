@@ -11,18 +11,36 @@
 
   <div class="p-3 content-section">
     <h3 class="text-center">List of Vendors</h3>
-    <div class="container-flex">
-      <% vendors.each_slice(3) do |two_vendors| %>
-      <div class="row my-2">
-        <% two_vendors.each do |vendor| %>
-        <div class="col-sm text-center large">
-          <a href="<%= vendor.link %>" <%= "title=#{vendor.caption}" if vendor.caption.present? %>>
-            <%= vendor.name %>
-          </a>
+    <div> <h4> Folsom Street Vendor Hall </h4>
+      <div class="container-flex">
+        <% vendors("folsom").each_slice(3) do |two_vendors| %>
+        <div class="row my-2">
+          <% two_vendors.each do |vendor| %>
+          <div class="col-sm text-center large">
+            <a href="<%= vendor.link %>" <%= "title=#{vendor.caption}" if vendor.caption.present? %>>
+              <%= vendor.name %>
+            </a>
+          </div>
+          <% end %>
         </div>
         <% end %>
       </div>
-      <% end %>
+
+    </div>
+    <div> <h4> Dore Alley Vendor Hall </h4>
+      <div class="container-flex">
+        <% vendors("dore").each_slice(3) do |two_vendors| %>
+        <div class="row my-2">
+          <% two_vendors.each do |vendor| %>
+          <div class="col-sm text-center large">
+            <a href="<%= vendor.link %>" <%= "title=#{vendor.caption}" if vendor.caption.present? %>>
+              <%= vendor.name %>
+            </a>
+          </div>
+          <% end %>
+        </div>
+        <% end %>
+      </div>
     </div>
   </div>
   

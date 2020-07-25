@@ -13,8 +13,8 @@ module EndorsementHelper
     @top_banner ||= (Endorsement.where(enabled: true, endorsement_type: "top").limit(1).order(Arel.sql('RAND()')).first || Endorsement.new)
   end
 
-  def vendors
-    @vendors ||= Endorsement.where(enabled: true, endorsement_type: "vendor").order(Arel.sql('RAND()'))
+  def vendors hall
+    @vendors ||= Endorsement.where(enabled: true, endorsement_type: "vendor-#{hall}").order(Arel.sql('RAND()'))
   end
   
 end
