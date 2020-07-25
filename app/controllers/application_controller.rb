@@ -12,8 +12,8 @@ class ApplicationController < ActionController::Base
 
   def verify_age
     unless (cookies.encrypted["age_verify"] == request.remote_ip)
-#      redirect_to "/welcome?redirect=#{URI.escape(request.fullpath)}" unless (params["demo"]=="show")
-      redirect_to "/welcome?redirect=#{URI.escape(request.fullpath)}"
+      redirect_to "/welcome?redirect=#{URI.escape(request.fullpath)}" unless (params["demo"]=="show")
+#      redirect_to "/welcome?redirect=#{URI.escape(request.fullpath)}"
     end
   end
 
