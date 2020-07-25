@@ -11,9 +11,9 @@
 
   <div class="p-3 content-section">
     <h3 class="text-center">List of Vendors</h3>
-    <div> <h4> Folsom Street Vendor Hall </h4>
+    <div> <h5 class="text-center"> Folsom Street Vendor Hall </h5>
       <div class="container-flex">
-        <% vendors("folsom").each_slice(3) do |two_vendors| %>
+        <% vendors("folsom").each_slice(2) do |two_vendors| %>
         <div class="row my-2">
           <% two_vendors.each do |vendor| %>
           <div class="col-sm text-center large">
@@ -27,9 +27,9 @@
       </div>
 
     </div>
-    <div> <h4> Dore Alley Vendor Hall </h4>
+    <div> <h5 class="text-center"> Dore Alley Vendor Hall </h5>
       <div class="container-flex">
-        <% vendors("dore").each_slice(3) do |two_vendors| %>
+        <% vendors("dore").each_slice(2) do |two_vendors| %>
         <div class="row my-2">
           <% two_vendors.each do |vendor| %>
           <div class="col-sm text-center large">
