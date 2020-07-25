@@ -14,7 +14,7 @@ module EndorsementHelper
   end
 
   def vendors hall
-    @vendors ||= Endorsement.where(enabled: true, endorsement_type: "vendor-#{hall}").order(Arel.sql('RAND()'))
+    Endorsement.where(enabled: true, endorsement_type: "vendor-#{hall}").order(Arel.sql('RAND()'))
   end
   
 end
