@@ -10,8 +10,6 @@ ActiveAdmin.register Endorsement do
     column :endorsement_type
     column :weight
     column :link
-    column :media_uri
-    column :media_type
     column :banner
     actions
   end
@@ -41,11 +39,8 @@ ActiveAdmin.register Endorsement do
       f.input :caption
       f.input :link
       f.input :enabled, as: :boolean
-      f.input :affiliate_id
       f.input :endorsement_type
       f.input :weight
-      f.input :media_uri
-      f.input :media_type
       f.input :banner, :as => :file
     end
     f.actions
