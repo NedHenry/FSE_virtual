@@ -25,7 +25,10 @@ div#logo-div {
 nav.navbar {
 
     div.dropdown-menu {
-        background-color: #FFFFD0
+        background-color: #FFFFD0;
+        .dropdown-item:hover {
+            background-color: #eaea65;
+        }
     }
     
     width: 100%;
