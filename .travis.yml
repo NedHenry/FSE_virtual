@@ -37,7 +37,7 @@ jobs:
     before_script:
     - docker exec fse_webapp scripts/wait-for-it.sh localhost:3000 -t 300
   - name: Deployment
-    stage: depoy
+    stage: deploy
     before_install:
       - openssl aes-256-cbc -K $encrypted_d8f27d088093_key -iv $encrypted_d8f27d088093_iv -in id_fse_rsa.enc -out id_fse_rsa -d
     install:
