@@ -22,6 +22,18 @@ div#logo-div {
     height: 30px;
 }
 
+#zoom-room {
+    max-width: 500px;
+}
+
+#dj-schedule {
+    max-width: 500px;
+    color: #eeee85;
+    .h4, .h2 {
+        color: #ffcd36;
+    }
+}
+
 nav.navbar {
 
     div.dropdown-menu {
