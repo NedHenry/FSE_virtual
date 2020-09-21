@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_23_225409) do
+ActiveRecord::Schema.define(version: 2020_09_21_230116) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "namespace"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2020_07_23_225409) do
   create_table "endorsements", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "affiliate_id"
     t.string "name"
-    t.string "caption"
+    t.text "caption"
     t.boolean "enabled"
     t.string "media_uri"
     t.string "media_type"
@@ -69,6 +69,8 @@ ActiveRecord::Schema.define(version: 2020_07_23_225409) do
     t.string "link"
     t.integer "weight"
     t.string "endorsement_type"
+    t.string "tagline"
+    t.string "subtitle"
   end
 
   create_table "pages", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|

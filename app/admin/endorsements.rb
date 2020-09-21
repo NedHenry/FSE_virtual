@@ -1,11 +1,12 @@
 ActiveAdmin.register Endorsement do
-  permit_params :affiliate_id,:name,:caption,:enabled,:media_uri,:media_type, :banner, :logo, :endorsement_type, :weight, :link
+  permit_params :affiliate_id,:name,:subtitle, :tagline, :caption,:enabled,:media_uri,:media_type, :banner, :logo, :endorsement_type, :weight, :link
 
   index do
     selectable_column
     id_column
     column :name
-    column :caption
+    column :subtitle
+    column :tagline
     column :enabled
     column :endorsement_type
     column :weight
@@ -18,6 +19,8 @@ ActiveAdmin.register Endorsement do
   show do
     attributes_table do
       row :name
+      row :subtitle
+      row :tagline
       row :caption
       row :link
       row :enabled
@@ -40,7 +43,9 @@ ActiveAdmin.register Endorsement do
   form do |f|
     f.inputs do
       f.input :name
-      f.input :caption
+      f.input :subtitle
+      f.input :tagline
+      f.input :caption, as: :text
       f.input :link
       f.input :enabled, as: :boolean
       f.input :endorsement_type
