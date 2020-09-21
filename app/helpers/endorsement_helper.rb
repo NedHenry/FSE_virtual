@@ -10,18 +10,18 @@ module EndorsementHelper
   end
   
   def secondary_sponsors num=4
-    get_sponsors('sponsors',num)
+    get_sponsors(['sponsor','premier'],num)
   end
 
   def get_sponsors(sponsor_type, num)
     sponsors = Endorsement.where(enabled: true, endorsement_type: sponsor_type)
     lim = [num, sponsors.count].min
-    sponsors = sponsors.limit(lim).order(Arel.sql('RAND()'))
+    sponsors = sponsors.limit(lim).order(Arel.sql('RAND()')).to_a
     return [] unless sponsors.count > 0
     while sponsors.count < num do
       sponsors << sponsors.first
     end
-    return sponsors.limit(num).order(Arel.sql('RAND()'))    
+    return sponsors
   end
 
   def endorsements_by_type(type,n=nil)
