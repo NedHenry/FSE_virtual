@@ -10,7 +10,7 @@ module ApplicationHelper
   end
 
   def clashfinder_name
-    "test"
+    "fsf2020"
   end
 
   def resource_name

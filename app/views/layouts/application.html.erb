@@ -12,10 +12,10 @@
       gtag('config', 'UA-173572066-1');
     </script>
 
-    <title>Up Your Alley</title>
+    <title>Folsom Street Fair</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= favicon_link_tag asset_path('FSE_YELLOW_FLAV_16x16.png') %>
+    <%= favicon_link_tag 'favicon.ico' %>
     
     <script> clash_name = "<%= clashfinder_name %>" </script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -27,28 +27,24 @@
   <body id="fse_body" class="text-light">
     <div id="header-bar" class="container">
       <div class="row">
-        <div id="logo-div" class="col-sm text-right mt-3">
-          <img src="<%= asset_path 'FSEventsLogo-bw.png' %>">
-        </div>
-      </div>
-      <div class="row">
         <%= render '/navigation' %>
       </div>
+      <div class="row">
+        <%= render '/endorsements_top' %>
+      </div>
     </div>
-    <%#= render '/schedule' %>
+    <%#= render '/schedule/up_next' %>
     <div class="text-center">
       <%= render '/flash_msg' %>
     </div>
     <div id="primary-content" class="container">
       <div class="row">
         <div id="page-content" class="col-lg order-lg-2 mx-3 px-4">
-          <%= render '/endorsements_topbanner' %>
           <%= yield %>
         </div>
-        <%= render '/endorsements' %>
       </div>
     </div>
-    
+    <%= render '/endorsements_bottom' %>
     <%= render '/footer' %>
   </body>
 </html>

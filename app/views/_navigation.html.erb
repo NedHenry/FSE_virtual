@@ -1,35 +1,34 @@
 <nav class="navbar navbar-expand-lg align-items-baseline">
-  <a class="navbar-brand display-3 text-yellow" href="/">
-    Up Your Alley
-  </a>
 
-  <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav text-center">
-      <li class="nav-item mx-2 <%= 'active' if current_page?('/') %>">
-        <a class="nav-link py-0" href="/">LIVE STREAM<span class="sr-only"></a>
-      </li>
-      <li class="nav-item mx-2 <%= 'active' if current_page?('/cruise') %>">
-        <a class="nav-link py-0" href="/cruise">CRUISE/PLAY</a>
-      </li>
-      <li class="nav-item mx-2 dropdown <%= 'active' if current_page?('/vendors') %>">
-        <a class="nav-link py-0 dropdown-toggle" href="/vendors" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">VENDOR MART</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/vendors?hall=folsom">Folsom Street Vendor Hall</a>
-          <a class="dropdown-item" href="/vendors?hall=dore">Dore Alley Vendor Hall</a>
-        </div>
-      </li>
-      <li class="nav-item mx-2  <%= 'active' if current_page?('/donate') %>">
-        <a class="nav-link py-0" href="/donate">DONATE</a>
-      </li>
-      <li class="nav-item mx-2">
-        <a class="nav-link py-0" href="https://www.folsomstreetevents.store/">SHOP FSE</a>
-      </li>
-    </ul>
-  </div>
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header mx-auto text-center">
+      <%= image_tag( asset_path("logo_nav.png"),  class:"d-lg-none", alt:"Folsom Street Fair", width: "250" ) %>
+      <button type="button" class="navbar-toggle d-lg-none my-3" data-toggle="collapse" data-target="#navbar-primary-collapse">
+        <span class="my-1 icon-bar"></span>
+        <span class="my-1 icon-bar"></span>
+        <span class="my-1 icon-bar"></span>
+      </button>
+    </div>
+    
+    <div class="collapse navbar-collapse" id="navbar-primary-collapse">
+      <ul class="row nav navbar-nav mx-auto align-items-center">
+        <li class="col-lg  <%= 'active' if current_page?('/') %>"><a href="/donate">DONATE</a></li>
+        <li class="col-lg  <%= 'active' if current_page?('/') %>"><a href="/scenes">SCENES</a></li>
+        <li class="col-3-lg  <%= 'active' if current_page?('/') %> d-none d-lg-inline"><a href="/">
+            <%= image_tag( asset_path("logo_nav.png"), id: "logo-navbar-middle",  alt:"Folsom Street Fair", width: "250" ) %>
+            </a></li>
+        <li class="col-sm  <%= 'active' if current_page?('/') %> dropdown">
+          <a href="/market" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MARKET</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item text-center" href="/market?hall=folsom">FOLSOM ST MARKET HALL</a>
+            <a class="dropdown-item text-center" href="/market?hall=dore">DORE ALLEY MARKET HALL</a>
+          </div>
+
+        </li>
+        <li class="col-sm  <%= 'active' if current_page?('/') %>" style="min-width:190px"><a href="/dj">DJ STREAM</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+
 </nav>
-
-

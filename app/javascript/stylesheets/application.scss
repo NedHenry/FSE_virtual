@@ -1,11 +1,11 @@
 @import './bootstrap_custom.scss';
 
-a, .text-yellow {
-    color: yellow;
+a, .text-white {
+    color: white;
 }
 
 a:hover {
-    color: darken(yellow, 10%);
+    color: darken(white, 10%);
 }
 
 body {
@@ -13,8 +13,8 @@ body {
 }
 
 .btn-primary {
-    background-color: yellow;
-    border-color: yellow;
+    background-color: white;
+    border-color: white;
     color:black;
 }
 
@@ -28,18 +28,49 @@ div#logo-div {
 
 #dj-schedule {
     max-width: 500px;
-    color: #eeee85;
+    color: #eeeeee;
     .h4, .h2 {
-        color: #ffcd36;
+        color: #bbbbbb;
+    }
+}
+
+nav.navbar {
+    .navbar-toggle {
+        background-color: black;
+        border: 0;
+        .icon-bar {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background-color: #eeeeee;
+            border-radius: 1px;
+        }
+    }
+    .navbar-header > img {
+        display: block
+    }
+    ul { 
+        //  background: #ededed;
+        width: 100%;
+        text-align: center;
+        > li {
+            font-size: 1.5em;
+            display: inline-block;
+            float: none;
+            > a {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+        }
     }
 }
 
 nav.navbar {
 
     div.dropdown-menu {
-        background-color: #FFFFD0;
+        background-color: #DDDDDD;
         .dropdown-item:hover {
-            background-color: #eaea65;
+            background-color: #dadada;
         }
     }
     
@@ -58,14 +89,14 @@ nav.navbar {
     }
     ul.navbar-nav {
         li.nav-item:hover {
-            background-color: darken(yellow, 10%);
+            background-color: darken(white, 10%);
         }
         li.nav-item.active {
-            background-color: #ffffa3;
+            background-color: #dddddd;
         }
         li.nav-item {
             max-width: 300px;
-            background-color: yellow;
+            background-color: white;
             a {
                 color: black;
             }
@@ -75,7 +106,7 @@ nav.navbar {
 
 #direct_twitch_link a {
     background-color: black;
-    color: yellow;
+    color: white;
 }
 
 @media (min-width: 544px) {  
@@ -132,7 +163,7 @@ div#primary-content, footer {
 
 ul li.cruise_space {
     border-radius: 5px;
-    background-color: rgba(255,255,0,0.2);
+    background-color: rgba(255,255,255,0.2);
     img{
         width: 100%;
         height: auto;
@@ -140,5 +171,60 @@ ul li.cruise_space {
     p{
         max-height: 250px;
         overflow-y: scroll;
+    }
+}
+
+#scenes-carousel {
+    max-width: 500px;
+    height: 300px;
+}
+
+#spank-vote {
+    img {
+        width: 100%
+    }
+}
+
+#thermometer div.panel-body{
+    margin: auto
+}
+
+#rules {
+    h3, h4{
+        text-align: center;
+    }
+    h5 {
+        margin-left: 15px;
+        margin-top: 30px;
+    }
+}
+
+#donations {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    p {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        background-color: black;
+        border: 1px solid white;
+        padding: inherit;
+        color: white;
+        
+    }
+    div a {
+        font-size: 1.2em;
+    }
+}
+
+#clashfinder_link {
+    background-color:white;
+    a {
+        color: black;
+        :hover {
+            color: lighten(black,10%)
+        }
     }
 }

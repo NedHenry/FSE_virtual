@@ -1,0 +1,55 @@
+
+<div id="scenes-carousel" class="carousel slide mx-auto" data-ride="carousel">
+  <div class="carousel-inner">
+    <% experience_partners.each_with_index do |exp,i| %>
+    <div class="carousel-item <%= 'active' if i==0 %>">
+      <img class="d-block w-100" src="<%= exp.banner.variant(resize: '500x300>') %>" alt="<%= exp.caption %>">
+    </div>
+    <% end %>
+  </div>
+  <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<ul id="scenes-grid" class="container">
+  <% experience_partners.each_slice(4) do |experiences| %>
+  <div class="row">
+    <% experiences.each do |exp| %>
+    <li class="cruise_space col-md mx-2 py-3" data-target="#<%= exp.name.parameterize %>-modal" data-toggle="modal" >
+      <%= image_tag url_for(exp.banner.variant(resize: "150x150>")), alt: exp.name %>
+     </li>
+    <% end %>
+  </div>
+  <% end %>
+</ul>
+
+<% experience_partners.each do |exp| %>
+<div class="scenes-modal modal fade" role="dialog" id="<%= exp.name.parameterize %>-modal">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><%= exp.name %></h4>
+      </div>
+      <div class="modal-body">
+        <a href="<%= exp.link %>">
+          <%= image_tag url_for(exp.banner.variant(resize: "150x150>")), alt: exp.name %>
+        </a>
+        <p><%= exp.caption %></p>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>      
+  </div>
+</div>
+<% end %>
+

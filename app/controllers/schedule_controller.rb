@@ -1,6 +1,6 @@
 class ScheduleController < ApplicationController
   
-  CLASHFINDER_NAME="test"
+  CLASHFINDER_NAME="fsf2020"
   CLASHFINDER_BASE="https://clashfinder.com/data/event/"
 
   def json
