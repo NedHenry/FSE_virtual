@@ -38,8 +38,8 @@
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <div class="modal-header mx-auto">
         <h3 class="modal-title"><%= exp.name %></h3>
       </div>
       <div class="modal-body text-center">
@@ -47,7 +47,7 @@
         <a class="modal-image" href="<%= exp.link %>">
           <%= image_tag url_for(exp.banner.variant(resize: "300x300>")), alt: exp.name %>
         </a>
-        <h5><%= exp.tagline %></h5>
+        <h4><%= exp.tagline %></h4>
         <div class="modal-caption">
           <%=raw exp.caption %>
           <p>Clicking on the above links will bring you to the community experience SCENE listed above. You will leave Folsom Street Events and all interaction will be presented and managed by the listed partner.</p>
