@@ -35,8 +35,7 @@ module EndorsementHelper
   end
 
   def experience_partners(n=nil)
-    endorsements_by_type("cruise",n)
-#    endorsements_by_type("experience",n)
+    endorsements_by_type("experience",n)
     cruise_spaces(n)
   end
 
