@@ -2,6 +2,7 @@
 <div id="scenes-carousel" class="carousel slide mx-auto" data-interval="2000" data-ride="carousel">
   <div class="carousel-inner">
     <% experience_partners.each_with_index do |exp,i| %>
+    <% next unless exp.banner.present? %>
     <div data-target="#<%= exp.name.parameterize %>-modal" data-toggle="modal" class="carousel-item <%= 'active' if i==0 %>">
       <img class="d-block w-100" src="<%= url_for(exp.banner.variant(resize: '300x300>')) %>" title="<%= exp.name %> - <%= exp.subtitle %>" alt="<%= exp.tagline %>">
       <div class="carousel-caption d-none d-md-block">
@@ -25,6 +26,7 @@
   <% experience_partners.each_slice(4) do |experiences| %>
   <div class="row">
     <% experiences.each do |exp| %>
+    <% next unless exp.banner.present? %>
     <li class="cruise_space col-md mx-auto p-3" data-target="#<%= exp.name.parameterize %>-modal" data-toggle="modal" >
       <%= image_tag url_for(exp.banner.variant(resize: "250x250>")), alt: exp.name %>
     </li>
@@ -34,6 +36,7 @@
 </ul>
 
 <% experience_partners.each do |exp| %>
+<% next unless exp.banner.present? %>
 <div class="scenes-modal modal fade" role="dialog" id="<%= exp.name.parameterize %>-modal">
   <div class="modal-dialog">
     <!-- Modal content-->
