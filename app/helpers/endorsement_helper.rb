@@ -36,7 +36,6 @@ module EndorsementHelper
 
   def experience_partners(n=nil)
     endorsements_by_type("experience",n)
-    cruise_spaces(n)
   end
 
   def top_banner
