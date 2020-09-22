@@ -1,14 +1,10 @@
 
-<div id="scenes-carousel" class="carousel slide mx-auto" data-interval="2000" data-ride="carousel">
+<div id="scenes-carousel" class="carousel slide mx-auto" data-interval="5000" data-ride="carousel">
   <div class="carousel-inner">
     <% experience_partners.each_with_index do |exp,i| %>
     <% next unless exp.banner.present? %>
     <div data-target="#<%= exp.name.parameterize %>-modal" data-toggle="modal" class="carousel-item <%= 'active' if i==0 %>">
       <img class="d-block w-100" src="<%= url_for(exp.banner.variant(resize: '300x300>')) %>" title="<%= exp.name %> - <%= exp.subtitle %>" alt="<%= exp.tagline %>">
-      <div class="carousel-caption d-none d-md-block">
-        <h5><%= exp.name %> - <%= exp.subtitle %></h5>
-        <p><%= exp.tagline %></p>
-      </div>
     </div>
     <% end %>
   </div>
