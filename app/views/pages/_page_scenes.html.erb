@@ -44,7 +44,7 @@
       <div class="modal-body text-center">
         <h4 class="modal-subtitle"><%= exp.subtitle %></h4>
         <a class="modal-image" href="<%= exp.link %>">
-          <%= image_tag url_for(exp.banner.variant(resize: "300x300>")), alt: exp.name %>
+          <%= image_tag url_for(exp.banner.variant(resize: "300x300>")), alt: exp.name, class: "my-3" %>
         </a>
         <h4><%= exp.tagline %></h4>
         <div class="modal-caption">
