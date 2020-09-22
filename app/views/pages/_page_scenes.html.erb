@@ -4,7 +4,6 @@
     <% experience_partners.each_with_index do |exp,i| %>
     <div class="carousel-item <%= 'active' if i==0 %>">
       <img class="d-block w-100" src="<%= url_for(exp.banner.variant(resize: '300x300>')) %>" title="<%= exp.name %> - <%= exp.subtitle %>" alt="<%= exp.tagline %>">
-      <label> <%= exp.name %> - <%= exp.subtitle %></label>
     </div>
     <% end %>
   </div>
@@ -46,7 +45,10 @@
         </a>
         <h5><%= exp.tagline %></h5>
         <div class="modal-caption">
-          <%= exp.caption %>
+          <%=raw exp.caption %>
+          <p>Clicking on the above links will bring you to the community experience SCENE listed above. You will leave Folsom Street Events and all interaction will be presented and managed by the listed partner.</p>
+
+          <p>Find the calendar of all events here: <a href="http://clashfinder.com/s/fsf2020/"> http://clashfinder.com/s/fsf2020/</a></p>
         </div>
       </div>
 
