@@ -25,7 +25,7 @@ module EndorsementHelper
   end
 
   def endorsements_by_type(type,n=nil)
-    endorsements = Endorsement.where(enabled: true, endorsement_type: type)
+    endorsements = Endorsement.where(enabled: true, endorsement_type: type).where.not(banner: nil)
     endorsements = endorsements.limit(n) if n.present?
     endorsements.order(Arel.sql('RAND()')) || []
   end
