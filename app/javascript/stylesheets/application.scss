@@ -173,8 +173,12 @@ ul li.cruise_space {
 }
 
 #scenes-carousel {
-    max-width: 500px;
+    max-width: 400px;
     height: 300px;
+    div.carousel-inner {
+        max-width: 300px;
+        margin: auto;
+    }
 }
 
 #scenes-grid {
