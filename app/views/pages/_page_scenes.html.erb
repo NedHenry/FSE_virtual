@@ -3,7 +3,7 @@
   <div class="carousel-inner">
     <% experience_partners.each_with_index do |exp,i| %>
     <div class="carousel-item <%= 'active' if i==0 %>">
-      <img class="d-block w-100" src="<%= exp.banner.variant(resize: '300x300>') %>" title="<%= exp.name %> - <%= exp.subtitle %>" alt="<%= exp.tagline %>">
+      <img class="d-block w-100" src="<%= url_for(exp.banner.variant(resize: '300x300>')) %>" title="<%= exp.name %> - <%= exp.subtitle %>" alt="<%= exp.tagline %>">
       <label> <%= exp.name %> - <%= exp.subtitle %></label>
     </div>
     <% end %>
@@ -22,7 +22,7 @@
   <% experience_partners.each_slice(4) do |experiences| %>
   <div class="row">
     <% experiences.each do |exp| %>
-    <li class="cruise_space col-md mx-2 py-3" data-target="#<%= exp.name.parameterize %>-modal" data-toggle="modal" >
+    <li class="cruise_space col-md mx-auto p-3" data-target="#<%= exp.name.parameterize %>-modal" data-toggle="modal" >
       <%= image_tag url_for(exp.banner.variant(resize: "250x250>")), alt: exp.name %>
      </li>
     <% end %>
@@ -41,7 +41,7 @@
         <h4 class="modal-subtitle"><%= exp.subtitle %></h4>
       </div>
       <div class="modal-body">
-        <a href="<%= exp.link %>">
+        <a class="modal-image" href="<%= exp.link %>">
           <%= image_tag url_for(exp.banner.variant(resize: "150x150>")), alt: exp.name %>
         </a>
         <h5><%= exp.tagline %></h5>
