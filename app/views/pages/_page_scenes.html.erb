@@ -1,25 +1,12 @@
-
-<div id="scenes-carousel" class="carousel slide mx-auto" data-interval="5000" data-ride="carousel">
-  <div class="carousel-inner">
-    <% experience_partners.each_with_index do |exp,i| %>
-    <% next unless exp.banner.present? %>
-    <div data-target="#<%= exp.name.parameterize %>-modal" data-toggle="modal" class="carousel-item <%= 'active' if i==0 %>">
-      <img class="d-block w-100" src="<%= url_for(exp.banner.variant(resize: '300x300>')) %>" title="<%= exp.name %> - <%= exp.subtitle %>" alt="<%= exp.tagline %>">
-    </div>
-    <% end %>
-  </div>
-  <a class="carousel-control-prev" href="#scenes-carousel" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#scenes-carousel" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
+<div class="text-center h4 py-1" id="clashfinder_link">
+  <a href="http://clashfinder.com/s/fsf2020/">
+      CLICK FOR SCHEDULE
   </a>
 </div>
 
+
 <ul id="scenes-grid" class="container">
-  <% experience_partners.each_slice(4) do |experiences| %>
+  <% experience_partners.each_slice(5) do |experiences| %>
   <div class="row">
     <% experiences.each do |exp| %>
     <% next unless exp.banner.present? %>
@@ -38,13 +25,13 @@
     <!-- Modal content-->
     <div class="modal-content">
       <button type="button" class="close" data-dismiss="modal">&times;</button>
-      <div class="modal-header mx-auto">
+      <div class="modal-header mx-auto pb-0">
         <h3 class="modal-title"><%= exp.name %></h3>
       </div>
-      <div class="modal-body text-center">
+      <div class="modal-body text-center pt-0">
         <h4 class="modal-subtitle"><%= exp.subtitle %></h4>
         <a class="modal-image" href="<%= exp.link %>">
-          <%= image_tag url_for(exp.banner.variant(resize: "300x300>")), alt: exp.name, class: "my-3" %>
+          <%= image_tag url_for(exp.banner.variant(resize: "400x400>")), alt: exp.name, class: "my-3" %>
         </a>
         <h4><%= exp.tagline %></h4>
         <div class="modal-caption">

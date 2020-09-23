@@ -10,7 +10,7 @@ module EndorsementHelper
   end
   
   def secondary_sponsors num=4
-    get_sponsors(['sponsor','premier'],num)
+    get_sponsors('sponsor',num)
   end
 
   def get_sponsors(sponsor_type, num)

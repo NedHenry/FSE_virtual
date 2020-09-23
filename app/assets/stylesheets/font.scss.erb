@@ -1,8 +1,16 @@
 @font-face {
-  font-family: 'Marsden Heavy';
-  src:url(<%= asset_path "Marsden-Cm-Heavy.otf" %>) format("truetype");
+  font-family: 'Nimbus Sans Round Heavy';
+  src:url(<%= asset_path "NimbusSansRound-Heavy.otf" %>) format("truetype");
+}
+
+@font-face {
+  font-family: 'Nimbus Sans Round Black';
+  src:url(<%= asset_path "NimbusSansRound-Black.otf" %>) format("truetype");
 }
 
 body#fse_body {
-    font-family: "Marsden Heavy";
+    font-family: "Nimbus Sans Round Heavy";
+    header {
+           font-family: "Nimbus Sans Round Black"
+    }
 }
