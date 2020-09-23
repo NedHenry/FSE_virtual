@@ -2,12 +2,21 @@ class ApplicationController < ActionController::Base
 
   before_action :verify_age
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :redirect_before_event
 
   rescue_from CanCan::AccessDenied do |exception|
     respond_to do |format|
       format.json { head :forbidden }
       format.html { redirect_to main_app.root_url, :alert => exception.message }
     end
+  end
+
+  def redirect_before_event
+    cookies[:demo] = "test" if (params["demo"]=="test")
+    return if (cookies[:demo] == "test")
+    Time.zone = "Pacific Time (US & Canada)"
+    return if Time.now > Time.new(2020, 9, 27, 10, 45, 0)
+    redirect_to "https://www.folsomstreetevents.org/folsom-street-fair"
   end
 
   def verify_age
