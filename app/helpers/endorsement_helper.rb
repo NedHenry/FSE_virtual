@@ -13,10 +13,10 @@ module EndorsementHelper
     get_sponsors('sponsor',num)
   end
 
-  def get_sponsors(sponsor_type, num)
+  def get_sponsors(sponsor_type, num = false)
     sponsors = Endorsement.where(enabled: true, endorsement_type: sponsor_type)
-    lim = [num, sponsors.count].min
-    sponsors = sponsors.limit(lim).order(Arel.sql('RAND()')).to_a
+    sponsors = sponsors.limit(num) if num
+    sponsors = sponsors.order(Arel.sql('RAND()')).to_a
     return [] unless sponsors.count > 0
     while sponsors.count < num do
       sponsors << sponsors.first

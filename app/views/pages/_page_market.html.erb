@@ -10,44 +10,38 @@
     </div>
     
     <div class="row">
-      <div class="col-sm text-center <%= 'active' if (hall=='folsom') %>">
-        <p class="h5"><%=  (hall=='folsom') ? "You are now viewing" : "Click to check out" %></p>
+      <div class="vendor-list col-md text-center <%= 'active' if (hall=='folsom') %>">
+        <p class="h5"><%=  (hall == :folsom) ? "You are now viewing" : "Click to visit" %></p>
         <a href="/market?hall=folsom">
           <h3>Folsom Hall</h3>
         </a>
-        <% get_sponsors('vendor-folsom',99).each do |vendor| %>
+        <% get_sponsors('vendor-folsom').each do |vendor| %>
         <a href="<%= vendor.link %>">
-          <p>
-            <%= vendor.name %>
-          </p>
+          <p class="vendor"><%= vendor.name %></p>
         </a>
         <% end %>
       </div>
       
-      <div class="col-sm text-center <%= 'active' if (hall=='dore') %>">
-        <p class="h5"><%=  (hall=='dore') ? "Welcome to" : "Click to check out" %></p>
+      <div class="vendor-list col-md text-center <%= 'active' if (hall=='dore') %>">
+        <p class="h5"><%=  (hall == :dore) ? "Welcome to" : "Click to visit" %></p>
         <a href="/market?hall=dore">
           <h3 class="text-center">Dore Hall</h3>
         </a>
-        <% get_sponsors('vendor-dore',99).each do |vendor| %>
+        <% get_sponsors('vendor-dore').each do |vendor| %>
         <a href="<%= vendor.link %>">
-          <p>
-            <%= vendor.name %>
-          </p>
+          <p class="vendor"><%= vendor.name %></p>
         </a>
         <% end %>
       </div>
       
-      <div class="col-sm text-center <%= 'active' if (hall=='ringold') %>">
-        <p class="h5"><%=  (hall=='ringold') ? "You are now viewing" : "Click to check out" %></p>
+      <div class="vendor-list col-md text-center <%= 'active' if (hall=='ringold') %>">
+        <p class="h5"><%=  (hall == :ringold) ? "You are now viewing" : "Click to visit" %></p>
         <a href="/market?hall=ringold">
           <h3>Ringold Hall</h3>
         </a>
-        <% get_sponsors('vendor-ringold',99).each do |vendor| %>
+        <% get_sponsors('vendor-ringold').each do |vendor| %>
         <a href="<%= vendor.link %>">
-          <p>
-            <%= vendor.name %>
-          </p>
+          <p class="vendor"><%= vendor.name %></p>
         </a>
         <% end %>
       </div>
