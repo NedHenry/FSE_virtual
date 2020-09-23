@@ -13,7 +13,7 @@ module EndorsementHelper
     get_sponsors('sponsor',num)
   end
 
-  def get_sponsors(sponsor_type, num = false)
+  def get_sponsors(sponsor_type, num = 0)
     sponsors = Endorsement.where(enabled: true, endorsement_type: sponsor_type)
     sponsors = sponsors.limit(num) if num
     sponsors = sponsors.order(Arel.sql('RAND()')).to_a
