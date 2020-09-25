@@ -188,6 +188,7 @@ ul li.cruise_space {
 }
 
 #spank-vote {
+    max-width: 500px;
     img {
         width: 100%
     }
@@ -262,4 +263,25 @@ ul li.cruise_space {
 
 iframe {
     max-width: 100%;
+}
+
+div#thermometer {
+    max-width: 280px;
+    div.panel-body {
+        float: none !important;
+        #neoncrm-preview #neoncrm-fundraising-widget {
+            .neoncrm-widget-donor-list-pane {
+                height: 90px;
+            }
+            max-width: 240px;
+            width: 100%;
+            height: 500px;
+            overflow-y: scroll;
+            display: inline-block !important;
+        }
+    }
+}
+
+#chat {
+    max-width: 550px;
 }

@@ -1,26 +1,29 @@
-<div class="text-center embed-container">
-  <iframe width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0" allowtransparency="true" src="https://www.crowdcast.io/e/nnwfd5bv?navlinks=false&embed=true" style="border: 1px solid #EEE;border-radius:3px" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" allow="microphone; camera;"></iframe>
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="text-center mx-auto col-lg-6 embed-container">
+      <iframe width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" allowtransparency="true" src="https://www.crowdcast.io/e/nnwfd5bv?navlinks=false&embed=true" style="border: 1px solid #EEE;border-radius:3px" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" allow="microphone; camera;"></iframe>
+    </div>
+
+    <div class="col-lg-3 order-sm-last order-lg-first col-md mx-auto my-2 my-lg-0 text-center" id="thermometer">
+      <script language='javascript' src="https://folsomstreetevents.z2systems.com/np/publicaccess/campaignThermometerWidget.do?campaignId=5&orgId=folsomstreetevents"></script>
+      <noscript></noscript>
+    </div>
+
+    <div class="col-lg-3 col-md order-md-last order-lg-last text-center mx-auto my-2 my-lg-0" id="chat">
+      <iframe src="https://minnit.chat/folsomstreetfair?embed&&nickname=" width="100%" height='500' style="border:none;" allowTransparency="true"></iframe>
+    </div>
+    
+  </div>
 </div>
 
-<div class="text-center h4 py-1" id="clashfinder_link">
+<div class="text-center h4 py-1 mt-3" id="clashfinder_link">
   <a href="http://clashfinder.com/s/fsf2020/">
-      CLICK FOR SCHEDULE
+    CLICK FOR SCHEDULE
   </a>
 </div>
 
-
-<div class="container">
-  <div class="row">
-    <div class="col-4-lg mx-auto text-center my-2 d-flex" id="spank-vote">
-      <%= image_tag(asset_path('Spank_Website.png')) %>
-    </div>
-
-    <div class="col-lg order-lg-first my-2 d-flex text-center" id="thermometer">
-      <script language='javascript' src="https://folsomstreetevents.z2systems.com/np/publicaccess/campaignThermometerWidget.do?campaignId=5&orgId=folsomstreetevents"></script>
-<noscript></noscript>
-    </div>
-    <div class="col-lg text-center order-lg-last my-2" id="chat">
-      <iframe src="https://minnit.chat/folsomstreetfair?embed&&nickname=" width='300' height='600' style="border:none;" allowTransparency="true"></iframe>
-    </div>
-  </div>
+<div class="mx-auto text-center my-2" id="spank-vote">
+  <%= image_tag(asset_path('Spank_Website.png')) %>
 </div>
+
