@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-  before_action :redirect_before_event
+#  before_action :redirect_before_event
   before_action :verify_age
   before_action :configure_permitted_parameters, if: :devise_controller?
 
