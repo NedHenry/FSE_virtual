@@ -1,14 +1,4 @@
 <% content_for(:header_scripts) do %>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      new Twitch.Embed("twitch-embed", {
-        width: 854,
-        height: 480,
-        channel: "folsomstreetevents",
-        parent: ["<%= request.domain %>"]
-      });
-    });
-  </script>
 <% end %>
 
 <div class="text-center embed-container">
@@ -19,3 +9,12 @@
     CLICK FOR SCHEDULE
   </a>
 </div>
+
+<script type="text/javascript">
+  new Twitch.Embed("twitch-embed", {
+    width: 854,
+    height: 480,
+    channel: "folsomstreetevents",
+    parent: ["<%= request.domain %>"]
+  });
+</script>
