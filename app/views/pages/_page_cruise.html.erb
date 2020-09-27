@@ -3,7 +3,7 @@
   <div class="row my-5">
     <% spaces.each do |cs| %>
     <li class="cruise_space col-md mx-2 py-3">
-      <a href="<%= cs.link %>">
+      <a target="_blank" href="<%= cs.link %>">
         <%= image_tag url_for(cs.banner.variant(resize: "300x200>")), alt: cs.name %>
       </a>
       <div class="col-lg">

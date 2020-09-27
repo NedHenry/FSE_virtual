@@ -1,16 +1,15 @@
 <div class="text-center h4 py-1" id="clashfinder_link">
-  <a href="http://clashfinder.com/s/fsf2020/">
+  <a target="_blank" href="http://clashfinder.com/s/fsf2020/">
       CLICK FOR SCHEDULE
   </a>
 </div>
-
 
 <ul id="scenes-grid" class="container">
   <% experience_partners.each_slice(5) do |experiences| %>
   <div class="row">
     <% experiences.each do |exp| %>
     <% next unless exp.banner.present? %>
-    <li class="cruise_space col-md mx-auto p-3" data-target="#<%= exp.name.parameterize %>-modal" data-toggle="modal" >
+    <li class="cruise_space col-md-2 mx-auto p-3" data-target="#<%= exp.name.parameterize %>-modal" data-toggle="modal" >
       <%= image_tag url_for(exp.banner.variant(resize: "250x250>")), alt: exp.name %>
     </li>
     <% end %>
@@ -30,7 +29,7 @@
       </div>
       <div class="modal-body text-center pt-0">
         <h4 class="modal-subtitle"><%= exp.subtitle %></h4>
-        <a class="modal-image" href="<%= exp.link %>">
+        <a target="_blank" class="modal-image" href="<%= exp.link %>">
           <%= image_tag url_for(exp.banner.variant(resize: "400x400>")), alt: exp.name, class: "my-3" %>
         </a>
         <h4><%= exp.tagline %></h4>
@@ -38,7 +37,7 @@
           <%=raw exp.caption %>
           <p>Clicking on the above links will bring you to the community experience SCENE listed above. You will leave Folsom Street Events and all interaction will be presented and managed by the listed partner.</p>
 
-          <p>Find the calendar of all events here: <a href="http://clashfinder.com/s/fsf2020/"> http://clashfinder.com/s/fsf2020/</a></p>
+          <p>Find the calendar of all events here: <a target="_blank" href="http://clashfinder.com/s/fsf2020/"> http://clashfinder.com/s/fsf2020/</a></p>
         </div>
       </div>
 

@@ -188,9 +188,9 @@ ul li.cruise_space {
 }
 
 #spank-vote {
-    max-width: 500px;
+    max-width: 400px;
     img {
-        width: 100%
+        width: 100%;
     }
 }
 
@@ -214,10 +214,16 @@ ul li.cruise_space {
         padding: 10px;
         color: white;
         font-size: 0.8em;
+        max-width: 600px;
     }
     div a {
+        max-width: 450px;
         width: 100%;
         font-size: 0.8em;
+        border: 1px solid white;
+        &:hover {
+            background-color: #111;
+        }
     }
 }
 
