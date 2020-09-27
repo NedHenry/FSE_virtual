@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     cookies[:demo] = "test" if (params["demo"]=="test")
     return if (cookies[:demo] == "test")
     Time.zone = "Pacific Time (US & Canada)"
-    return if Time.now > Time.new(2020, 9, 27, 10, 45, 0)
+    return if Time.now > Time.new(2020, 9, 27, 5, 00, 0)
     redirect_to "https://www.folsomstreetevents.org/folsom-street-fair"
   end
 
