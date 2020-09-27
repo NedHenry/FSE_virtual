@@ -1,17 +1,21 @@
-<div class="text-center embed-container">
-  <div id="twitch-embed"></div>
-  <script src="https://embed.twitch.tv/embed/v1.js"></script>
+<% content_for(:header_scripts) do %>
   <script type="text/javascript">
-    new Twitch.Embed("twitch-embed", {
-    width: 854,
-    height: 480,
-    channel: "folsomstreetevents",
-    parent: ["<%= request.domain %>"]
+    $(document).ready(function() {
+      new Twitch.Embed("twitch-embed", {
+        width: 854,
+        height: 480,
+        channel: "folsomstreetevents",
+        parent: ["<%= request.domain %>"]
+      });
     });
   </script>
+<% end %>
+
+<div class="text-center embed-container">
+  <div id="twitch-embed"></div>
 </div>
-<div class="text-center h4 p1" id="direct_twitch_link">
-  <a href="https://www.twitch.tv/folsomstreetevents">
-      CLICK HERE TO VIEW THE DJ STREAM DIRECTLY ON TWITCH
+<div class="text-center h4 py-1 mt-3" id="clashfinder_link">
+  <a href="http://clashfinder.com/s/fsf2020/">
+    CLICK FOR SCHEDULE
   </a>
 </div>
