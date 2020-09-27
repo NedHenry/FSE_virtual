@@ -1,12 +1,12 @@
 <% hall = (params["hall"].to_sym || [:folsom,:dore,:ringold].sample); %>
-<% hallcodes = {dore: '5f60f0512f0c7f100661dc78', folsom: '5f60e2244e100a103498bad7', ringold: '5f5fdb0b3da86b4368bb30a4'} %>
+<% hallcodes = {dore: '5f60f0512f0c7f100661dc78', folsom: '5f60e2244e100a103498bad7', ringold: '5f6e6df8fc5c770a2a55c65a'} %>
 
 
 <div id="market-embed" class="text-center px-3">
   <iframe width="853" height="480" src="https://www.artsteps.com/embed/<%= hallcodes[hall] %>/853/480" frameborder="0" allowfullscreen></iframe>
 </div>
 
-<p class="m-5 text-center">To best navigate the vendor mart halls, use your WASD keys to move forward, backwards, left and right. Use the Q & E keys to look to the left or right. The vendor mart halls are best viewed on a desktop computer. </p>
+<p class="m-5 text-center">To best navigate the vendor mart halls, use your WASD keys to move forward, backwards, left and right. Use the Q & E keys to look to the left or right. The vendor mart halls are best viewed on a desktop computer.<br>Click an image to see a description, and a link to copy and paste to visit the vendor's website.</p>
 
 <div class="container">
   <div class="row">
