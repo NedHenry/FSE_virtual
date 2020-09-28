@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-  before_action :redirect
+#  before_action :redirect
   before_action :verify_age
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -11,13 +11,13 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def redirect
+#  def redirect
 #    cookies[:demo] = "test" if (params["demo"]=="test")
 #    return if (cookies[:demo] == "test")
 #    Time.zone = "Pacific Time (US & Canada)"
 #    return if Time.now > Time.new(2020, 9, 27, 5, 00, 0)
-    redirect_to "https://www.folsomstreetevents.org/folsom-street-fair"
-  end
+#    redirect_to "http://www.folsomstreetevents.org/folsom-street-fair"
+#  end
 
   def verify_age
     unless (cookies.encrypted["age_verify"] == request.remote_ip)
