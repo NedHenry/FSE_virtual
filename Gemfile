@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem "aws-sdk-s3", require: false
 
 # Use Active Storage variant
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 
 gem "devise", ">= 4.7.1"
 gem 'devise-guests', '~> 0.5'
